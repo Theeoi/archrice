@@ -8,14 +8,14 @@ base-devel 1-2
 bc 1.08.2-1
 bluez-utils 5.83-1
 brightnessctl 0.5.1-3
-btrfs-progs 6.16-1
+btrfs-progs 6.16.1-1
 dialog 1:1.3_20250116-1
-discord 1:0.0.108-1
+discord 1:0.0.109-1
 efibootmgr 18-3
 fastfetch 2.52.0-1
 firefox 142.0.1-1
 fuzzel 1.13.1-1
-fwupd 2.0.14-1
+fwupd 2.0.16-1
 git 2.51.0-1
 greetd 0.10.3-1
 greetd-tuigreet 0.9.1-1
@@ -24,7 +24,7 @@ grub-btrfs 4.13-2
 imv 4.5.0-5
 inotify-tools 4.23.9.0-2
 intel-ucode 20250812-1
-linux 6.16.5.arch1-1
+linux 6.16.7.arch1-1
 linux-firmware 20250808-1
 mako 1.10.0-1
 man-db 2.13.1-1
@@ -40,7 +40,7 @@ pulseaudio-bluetooth 17.0+r43+g3e2bb8a1e-1
 reflector 2023-3
 sbctl 0.17-1
 snap-pac 3.0.1-3
-snapper 0.12.2-4
+snapper 0.13.0-1
 spotify-launcher 0.6.3-2
 sudo 1.9.17.p1-1
 swaybg 1.2.1-1
@@ -49,6 +49,7 @@ swaylock 1.8.3-1
 tealdeer 1.7.2-1
 texinfo 7.2-1
 thunderbird 142.0-1
+udiskie 2.5.8-1
 unzip 6.0-23
 vim 9.1.1734-1
 waybar 0.14.0-1

@@ -9,6 +9,8 @@ cp -a /etc/greetd/config.toml ./configs
 cp -a /etc/niri/config.kdl ./configs
 cp -a $XDG_CONFIG_HOME/swaylock/config ./configs
 cp -a $HOME/images/wallpapers .
-cp -a $HOME/.vimrc ./configs
+cp -a $XDG_CONFIG_HOME/vim/vimrc ./configs
 cp -a $XDG_CONFIG_DIRS/waybar ./configs
-cp -a $HOME/.bashrc ./configs
+cp -a $XDG_CONFIG_HOME/bash/bashrc ./configs
+cp -a $XDG_CONFIG_HOME/udiskie/config.yml ./configs
+cp -a $XDG_CONFIG_DIRS/user-dirs.defaults ./configs
