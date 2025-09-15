@@ -269,6 +269,7 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
+spawn-at-startup "udiskie"
 spawn-at-startup "waybar"
 spawn-at-startup "swayidle"
 spawn-sh-at-startup "swaybg -i ~/images/wallpapers/a_mountain_with_trees_and_moon.jpg"
