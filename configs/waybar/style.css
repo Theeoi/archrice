@@ -6,7 +6,7 @@
 
 window#waybar {
     background-color: transparent;
-    color: #ffffff;
+    color: rgba(248, 248, 242, 1.0);
 }
 
 window#waybar > box {
@@ -14,12 +14,12 @@ window#waybar > box {
 }
 
 tooltip {
-    background: rgba(43, 48, 59, 0.5);
+    background: rgba(40, 42, 54, 0.5);
     border-radius: 10px;
 }
 
 tooltip label {
-    color: #ffffff;
+    color: rgba(248, 248, 242, 0.8);
 }
 
 #clock,
@@ -28,9 +28,8 @@ tooltip label {
 #pulseaudio,
 #bluetooth,
 #tray {
-    color: #ffffff;
-    background-color: rgba(43, 48, 59, 0.5);
-    border: 2px solid rgba(100, 114, 125, 0.8);
+    background-color: rgba(40, 42, 54, 0.5);
+    border: 2px solid rgba(98, 114, 164, 0.8);
     border-radius: 15px;
     margin: 0 2px;
     padding: 0 10px;
