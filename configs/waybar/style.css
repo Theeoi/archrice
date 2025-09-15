@@ -32,9 +32,19 @@ tooltip label {
     background-color: rgba(43, 48, 59, 0.5);
     border: 2px solid rgba(100, 114, 125, 0.8);
     border-radius: 15px;
+    margin: 0 2px;
     padding: 0 10px;
 }
 
+#clock {
+    margin-left: 0;
+}
+
+#battery {
+    margin-right: 0;
+}
+
+/*
 @keyframes blink {
     to {
         background-color: #ffffff;
@@ -42,7 +52,7 @@ tooltip label {
     }
 }
 
-/* Using steps() instead of linear as a timing function to limit cpu usage */
+Using steps() instead of linear as a timing function to limit cpu usage
 #battery.critical:not(.charging) {
     background-color: #f53c3c;
     color: #ffffff;
@@ -52,3 +62,4 @@ tooltip label {
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
+*/

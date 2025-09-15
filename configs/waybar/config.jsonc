@@ -2,9 +2,9 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 20, // Waybar height (to be removed for auto height)
+    // "height": 20, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
+    // "spacing": 4, // Gaps between modules (4px)
     "reload_style_on_change": true,
     // Choose the order of the modules
     "modules-left": [
@@ -23,18 +23,11 @@
         "format": "{:%H:%M - %a, %d %b}"
     },
     "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
         "format": "{icon}",
         "format-full": "{icon}",
         "format-charging": "{capacity}% ",
         "format-plugged": "",
         "format-alt": "{icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
         "format-icons": ["", "", "", "", ""]
     },
     "bluetooth": {
@@ -43,16 +36,13 @@
         "format-connected": " {device_alias}"
     },
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "",
         "format-ethernet": "",
         "format-disconnected": "⚠",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)",
         "tooltip-format-ethernet": "{ipaddr}/{cidr}"
-        // "format-linked": "{ifname} (No IP) ",
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
         "format": "{icon} {format_source}",
         "format-bluetooth": "{icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
@@ -68,18 +58,5 @@
             "car": "",
             "default": ["", "", ""]
         }
-        // "on-click": "pavucontrol"
-    },
-    "custom/power": {
-        "format" : "⏻ ",
-		"tooltip": false,
-		"menu": "on-click",
-		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-		"menu-actions": {
-			"shutdown": "shutdown",
-			"reboot": "reboot",
-			"suspend": "systemctl suspend",
-			"hibernate": "systemctl hibernate"
-		}
     }
 }
