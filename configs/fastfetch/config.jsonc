@@ -34,7 +34,7 @@
         },
         {
             "type": "shell",
-            "key": "└",
+            "key": "└",
             "keyColor": "#50fa7b"
         },
         "break",
@@ -46,12 +46,12 @@
         },
         {
             "type": "lm",
-            "key": "├󰧨",
+            "key": "├󰟵",
             "keyColor": "#ffb86c"
         },
         {
             "type": "terminal",
-            "key": "└",
+            "key": "└",
             "keyColor": "#ffb86c"
         },
         "break",
