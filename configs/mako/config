@@ -1,0 +1,9 @@
+# dracula styling
+background-color=#282A36CC
+text-color=#F8F8F2FF
+border-color=#FFB86CCC
+border-radius=10
+
+# notification behaviour
+default-timeout=3000
+max-visible=3
