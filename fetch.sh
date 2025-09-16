@@ -13,5 +13,6 @@ cp -a $XDG_CONFIG_DIRS/waybar ./configs
 cp -a $XDG_CONFIG_HOME/bash/bashrc ./configs/bash
 cp -a $XDG_CONFIG_HOME/mako/config ./configs/mako
 cp -a $XDG_CONFIG_DIRS/user-dirs.defaults ./configs/xdg-user-dirs
+cp -a $XDG_CONFIG_HOME/fastfetch/config.jsonc ./configs/fastfetch
 
 cp -a $HOME/images/wallpapers .
