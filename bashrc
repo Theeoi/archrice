@@ -11,6 +11,7 @@ alias mkdir='mkdir -p'
 alias cp='cp -i'
 alias mv='mv -i'
 alias df='df -h'
+alias clear='clear -x'
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -20,6 +21,10 @@ function git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
-PS1='\[\033[1;32m\]\u@\h\[\033[1;37m\] \W \[\033[0;36m\]$(git_branch)\[\033[1;32m\]->\[\033[00m\] '
+PS1=
+if [[ $SSH_CONNECTION ]]; then
+    PS1+='\[\e[38;5;51;1m\]\u\[\e[22;2;2m\]@\[\e[22;1;1m\]\H\[\e[22m\]'
+fi
+PS1+=':\[\e[38;5;47;1m\]\w\[\e[0m\] \[\e[38;5;24m\]$(git_branch)\[\e[0m\] \[\e[38;5;214;1m\]>\[\e[0m\] '
 
 fastfetch
