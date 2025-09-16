@@ -27,4 +27,5 @@ if [[ $SSH_CONNECTION ]]; then
 fi
 PS1+=':\[\e[38;5;47;1m\]\w\[\e[0m\] \[\e[38;5;24m\]$(git_branch)\[\e[0m\] \[\e[38;5;214;1m\]>\[\e[0m\] '
 
+export AUDIT_NUM=$(arch-audit | wc -l)
 fastfetch
