@@ -9,6 +9,7 @@ bc 1.08.2-1
 bluez-utils 5.83-1
 brightnessctl 0.5.1-3
 btrfs-progs 6.16.1-1
+dart-sass 1.93.0-1
 dialog 1:1.3_20250116-1
 discord 1:0.0.109-1
 efibootmgr 18-3
@@ -17,6 +18,7 @@ firefox 142.0.1-1
 fuzzel 1.13.1-1
 fwupd 2.0.16-1
 git 2.51.0-1
+github-cli 2.79.0-1
 greetd 0.10.3-1
 greetd-tuigreet 0.9.1-1
 grub 2:2.12.r359.g19c698d12-1
@@ -52,8 +54,10 @@ thunderbird 142.0-1
 ttf-nerd-fonts-symbols 3.4.0-1
 udiskie 2.5.8-1
 unzip 6.0-23
+uv 0.8.19-1
 vim 9.1.1734-1
 waybar 0.14.0-1
 xdg-desktop-portal-gnome 48.0-2
 xdg-desktop-portal-gtk 1.15.3-1
+xdg-utils 1.2.1-1
 xwayland-satellite 0.7-1
