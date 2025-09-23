@@ -24,6 +24,7 @@ greetd 0.10.3-1
 greetd-tuigreet 0.9.1-1
 grub 2:2.12.r359.g19c698d12-1
 grub-btrfs 4.13-2
+gvim 9.1.1734-1
 imv 4.5.0-5
 inotify-tools 4.23.9.0-2
 intel-ucode 20250812-1
@@ -56,7 +57,6 @@ ttf-nerd-fonts-symbols 3.4.0-1
 udiskie 2.5.8-1
 unzip 6.0-23
 uv 0.8.19-1
-vim 9.1.1734-1
 waybar 0.14.0-1
 xdg-desktop-portal-gnome 48.0-2
 xdg-desktop-portal-gtk 1.15.3-1
