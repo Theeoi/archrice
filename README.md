@@ -6,8 +6,8 @@ Collection of configuration files on my Lenovo Thinkpad X1 Yoga (Gen 3) running 
 commit to ensure documentation align with configs.*
 
 ## Screenshots
-![clean desktop](../v1.0.0-s/desktop.png)
-![busy desktop](../v1.0.0-s/desktop2.png)
+![clean desktop](/../_screenshots/v1.0.0/desktop.png)
+![busy desktop](/../_screenshots/v1.0.0/desktop2.png)
 
 ## Tools in this Rice
 - [alacritty](configs/alacritty)
