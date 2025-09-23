@@ -2,6 +2,9 @@
 
 Collection of configuration files on my Lenovo Thinkpad X1 Yoga (Gen 3) running [arch linux](https://archlinux.org/) btw..
 
+*Documentation on the main branch might not be up-to-date. Checkout a tagged
+commit to ensure documentation align with configs.*
+
 ## Screenshots
 ![clean desktop](../v1.0.0-s/desktop.png)
 ![busy desktop](../v1.0.0-s/desktop2.png)
