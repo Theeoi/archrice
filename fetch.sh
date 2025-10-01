@@ -15,4 +15,6 @@ cp -a $XDG_CONFIG_HOME/mako/config ./configs/mako
 cp -a $XDG_CONFIG_DIRS/user-dirs.defaults ./configs/xdg-user-dirs
 cp -a $XDG_CONFIG_HOME/fastfetch ./configs
 
+cp -a /usr/local/bin/* ./scripts
+
 cp -a $HOME/images/wallpapers .
