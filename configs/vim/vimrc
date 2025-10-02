@@ -1,61 +1,166 @@
+" All system-wide defaults are set in $VIMRUNTIME/archlinux.vim (usually just
+" /usr/share/vim/vimfiles/archlinux.vim) and sourced by the call to :runtime
+" you can find below.  If you wish to change any of those settings, you should
+" do it in this file (/etc/vimrc), since archlinux.vim will be overwritten
+" everytime an upgrade of the vim packages is performed.  It is recommended to
+" make changes after sourcing archlinux.vim since it alters the value of the
+" 'compatible' option.
+
+" This line should not be removed as it ensures that various options are
+" properly set to work with the Vim-related packages.
+runtime! archlinux.vim
+
+" If you prefer the old-style vim functionalty, add 'runtime! vimrc_example.vim'
+" Or better yet, read /usr/share/vim/vim80/vimrc_example.vim or the vim manual
+" and configure vim to your own liking!
+
+" do not load defaults if ~/.vimrc is missing
+"let skip_defaults_vim=1
+
+""" 
+""" OPTIONS
+"""
 syntax enable
-filetype on
-filetype plugin on
-filetype indent on
 
-set title
-set confirm
-
-"move viminfo to .config
-set viminfo='10,<100,:100,%,n~/.config/vim/viminfo
-
-"set how text is viewed
-set wrap
-set textwidth=80
-set linebreak
-
-"enables linenumbers and identifiable current line
-set ruler
-set number
+" Relative numbers!
 set relativenumber
+set number
 
-"enables good scrolling
+" Proper tabs and indentation
+set tabstop=4
+set expandtab
+set softtabstop=4
+set shiftwidth=4
+set autoindent
+
+set nowrap
+
+" Case insensitive searching and highlights
+set ignorecase
+set smartcase
+set incsearch
+
+" Split in predictable ways
+set splitright
+set splitbelow
+
+" Highlight cursor line
+set cursorline
+
+" Good scrolling
 set scrolloff=8
 set sidescrolloff=8
 
-"enable indentation and identify matching parenthesis
-set autoindent
-set smartindent
-set showmatch
+" Confirm when in risk of losing changes
+set confirm
+
+" Netrw customization
+let g:netrw_liststyle=3
+let g:netrw_banner=0
+let g:netrw_alto=0
+
+" Enable system clipboard by default
+let &clipboard = 'unnamedplus,' . &clipboard
+
+"""
+""" FUNCTIONS
+"""
+
+" Easily toggle in and out of netrw
+function! OpenNetrw()
+    let ft = &filetype
+
+    if ft ==# 'netrw'
+        execute 'Rex'
+    else
+        let cwd = getcwd()
+        execute 'Ex' fnameescape(cwd)
+        execute 'Ntree' fnameescape(cwd)
+    endif
+endfunction
+
+" Update vim cwd alongside netrw cd
+function! NetrwChangeDir() abort
+    let dir = get(b:, 'netrw_curdir', '')
+    if !empty(dir)
+        execute 'cd' fnameescape(dir)
+        execute 'Ntree' fnameescape(dir)
+    endif
+endfunction
+
+function! SetupNetrwGlobalCD() abort
+    nnoremap <buffer> cd :call NetrwChangeDir()<CR>
+endfunction
+
+augroup NetrwGlobalCD
+    autocmd!
+    autocmd FileType netrw call SetupNetrwGlobalCD()
+augroup END
+
+"""
+""" KEYMAPS
+"""
+let g:mapleader=" "
+let g:localmapleader="\\"
+
+"easy exit from insert mode
+inoremap jk <esc>
+
+" Quickly save
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>W :wq<CR>
+
+" Optionally use ¤ instead of $
+nnoremap ¤ $
+onoremap ¤ $
+vnoremap ¤ $
 
 "enables good search
-set ignorecase
-set smartcase
-set hlsearch
-set incsearch
 nnoremap // :nohlsearch<CR>
 nnoremap n nzz
 nnoremap N Nzz
-
-"set proper tabs
-set expandtab
-set smarttab
-set shiftwidth=4
-set tabstop=4
-
-"easy exit from insert mode
-inoremap jj <esc>
 
 "reselect visual selection after indenting
 vnoremap < <gv
 vnoremap > >gv
 
-"enable elite-mode (no arrows!)
-let g:elite_mode=1
-nnoremap <Up> :resize +2<CR>
-nnoremap <Down> :resize -2<CR>
-nnoremap <Left> :vertical resize +2<CR>
-nnoremap <Right> :vertical resize -2<CR>
+" Open netrw in current split
+nnoremap <Leader>e :call OpenNetrw()<CR>
+
+" Splitting windows and using tabs/buffers
+nnoremap <Leader>sl <C-w>v
+nnoremap <Leader>sj <C-w>s
+nnoremap <Leader>sx :close<CR>
+
+nnoremap <Leader>tn :tabnew<CR>
+nnoremap <Leader>tt :tabnew %<CR>
+nnoremap <Leader>tx :tabclose<CR>
+nnoremap <Leader>tl :tabn<CR>
+nnoremap <Leader>th :tabp<CR>
+
+nnoremap <Leader>bb :buffers<CR>:b<space>
+
+" Navigate between splits with Alt
+" <Esc> since terminal does not send Alt key directly to vim
+tnoremap <Esc>h <C-\\><C-n><C-w>h
+tnoremap <Esc>j <C-\\><C-n><C-w>j
+tnoremap <Esc>k <C-\\><C-n><C-w>k
+tnoremap <Esc>l <C-\\><C-n><C-w>l
+inoremap <Esc>h <C-\\><C-n><C-w>h
+inoremap <Esc>j <C-\\><C-n><C-w>j
+inoremap <Esc>k <C-\\><C-n><C-w>k
+inoremap <Esc>l <C-\\><C-n><C-w>l
+nnoremap <Esc>h <C-w>h
+nnoremap <Esc>j <C-w>j
+nnoremap <Esc>k <C-w>k
+nnoremap <Esc>l <C-w>l
+
+"""
+""" MISCELLANEOUS
+"""
 
 " Allow saving files as sudo when I forgot to start vim using sudo..
 cmap w!! w !sudo tee > /dev/null %
+
+"move viminfo to .local/state
+set viminfo='10,<100,:100,%,n~/.local/state/vim/viminfo
