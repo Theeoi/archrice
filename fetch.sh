@@ -14,6 +14,7 @@ cp -a $XDG_CONFIG_HOME/bash/bashrc ./configs/bash
 cp -a $XDG_CONFIG_HOME/mako/config ./configs/mako
 cp -a $XDG_CONFIG_DIRS/user-dirs.defaults ./configs/xdg-user-dirs
 cp -a $XDG_CONFIG_HOME/fastfetch ./configs
+cp -a $XDG_CONFIG_HOME/nvim ./configs
 
 cp -a /usr/local/bin/* ./scripts
 
