@@ -110,6 +110,9 @@ inoremap jk <esc>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>W :wq<CR>
 
+" Quickly quit
+nnoremap <Leader>Q :q<CR>
+
 " Optionally use ¤ instead of $
 nnoremap ¤ $
 onoremap ¤ $

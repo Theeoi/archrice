@@ -15,6 +15,9 @@ keymap.set({ "i" }, "jk", "<Esc>")
 keymap.set({ "n" }, "<leader>w", "<cmd>w<CR>", { desc = "Save current file." })
 keymap.set({ "n" }, "<leader>W", "<cmd>wq<CR>", { desc = "Save and close current file." })
 
+-- Quickly quit
+keymap.set({ "n" }, "<leader>Q", "<cmd>q<CR>", { desc = "Close the current buffer." })
+
 -- Use <Esc> to exit terminal mode
 keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
