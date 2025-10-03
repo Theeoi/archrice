@@ -54,6 +54,8 @@ swaylock 1.8.3-1
 tealdeer 1.7.2-1
 texinfo 7.2-1
 thunderbird 143.0.1-1
+tmux 3.5_a-1
+tmuxp 1.55.0-1
 ttf-nerd-fonts-symbols 3.4.0-1
 udiskie 2.5.8-1
 unzip 6.0-23
