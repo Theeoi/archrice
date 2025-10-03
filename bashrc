@@ -35,5 +35,13 @@ if [ ! -f "$SSH_AUTH_SOCK" ]; then
     source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
 fi
 
+# Startup default tmux session every time
+if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
+    if ! systemctl --user is-active --quiet tmux.service; then
+        systemctl --user start tmux.service
+    fi
+    exec tmux attach-session -d -t "${USER}" > /dev/null 2>&1
+fi
+
 export AUDIT_NUM=$(cat ~/.cache/auditnum.txt)
 fastfetch
