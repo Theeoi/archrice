@@ -16,6 +16,8 @@ cp -a $XDG_CONFIG_DIRS/user-dirs.defaults ./configs/xdg-user-dirs
 cp -a $XDG_CONFIG_HOME/fastfetch ./configs
 cp -a $XDG_CONFIG_HOME/nvim ./configs
 cp -a $XDG_CONFIG_HOME/tmux/tmux.conf ./configs/tmux
+cp -a $HOME/documents/obsidian-vault/.obsidian.vimrc ./configs/obsidian/obsidian.vimrc
+cp -a $HOME/documents/obsidian-vault/.obsidian/{community-plugins,hotkeys}.json ./configs/obsidian
 
 cp -a /usr/local/bin/* ./scripts
 
