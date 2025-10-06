@@ -7,7 +7,7 @@ set clipboard=unnamed
 " Using <Space> as leader
 unmap <Space>
 
-" Navigate visual lines rather than logical ones
+" Navigate visual lines
 nnoremap j gj
 nnoremap k gk
 
@@ -46,6 +46,9 @@ nnoremap <C-i> :forward<CR>
 exmap deleteFile obcommand app:delete-file
 nnoremap <Space>DD :deleteFile<CR>
 
+" Exit insertmode with jk
+inoremap jk <Esc>
+
 " Closing and saving
 exmap saveFile obcommand editor:save-file
 nnoremap <Space>w :saveFile<CR>
@@ -58,6 +61,9 @@ exmap nextTab obcommand workspace:next-tab
 exmap prevTab obcommand workspace:previous-tab
 nnoremap <Space>tl :nextTab<CR>
 nnoremap <Space>th :prevTab<CR>
+exmap newTab obcommand homepage:open-homepage
+exmap focusEditor obcommand editor:focus
+nnoremap <Space>tn :newTab<CR>:focusEditor<CR>
 nnoremap <Space>tx :closeFile<CR>
 
 " Splits
