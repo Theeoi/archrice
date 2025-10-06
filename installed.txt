@@ -18,6 +18,7 @@ fastfetch 2.53.0-1
 firefox 143.0.3-1
 fuzzel 1.13.1-1
 fwupd 2.0.16-1
+gimp 3.0.4-5
 git 2.51.0-1
 github-cli 2.81.0-1
 greetd 0.10.3-1
@@ -26,6 +27,7 @@ grub 2:2.12.r359.g19c698d12-1
 grub-btrfs 4.13-2
 gvim 9.1.1734-1
 imv 4.5.0-6
+inkscape 1.4.2-8
 inotify-tools 4.25.9.0-1
 intel-ucode 20250812-1
 linux 6.16.8.arch3-1
