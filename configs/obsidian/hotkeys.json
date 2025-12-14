@@ -138,8 +138,35 @@
     }
   ],
   "editor:toggle-italics": [],
-  "switcher:open": [],
+  "switcher:open": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "O"
+    }
+  ],
   "workspace:new-tab": [],
   "editor:open-search-replace": [],
-  "editor:toggle-checklist-status": []
+  "editor:toggle-checklist-status": [],
+  "app:reload": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod",
+        "Shift"
+      ],
+      "key": "R"
+    }
+  ],
+  "note-composer:split-file": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "X"
+    }
+  ]
 }

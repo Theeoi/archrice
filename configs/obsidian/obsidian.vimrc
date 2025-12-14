@@ -1,5 +1,6 @@
 " Proper indentation and tabs
 set tabstop=4
+set scrolloff=8
 
 " Yank to system clipboard
 set clipboard=unnamed
@@ -30,7 +31,7 @@ nnoremap <Space>e :fileExplorer<CR>
 
 " Focus on global search
 exmap searchExplorer obcommand global-search:open
-nnoremap <Space>s :searchExplorer<CR>
+nnoremap <Space>f :searchExplorer<CR>
 
 " Focus on git view
 exmap gitExplorer obcommand obsidian-git:open-git-view
