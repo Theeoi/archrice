@@ -58,6 +58,11 @@ texinfo 7.2-1
 thunderbird 143.0.1-1
 tmux 3.5_a-1
 tmuxp 1.55.0-1
+texlive-binextra 2025.2-2
+texlive-fontsextra 2025.2-2
+texlive-latex 2025.2-2
+texlive-latexextra 2025.2-2
+texlive-latexrecommended 2025.2-2
 ttf-nerd-fonts-symbols 3.4.0-1
 udiskie 2.5.8-1
 unzip 6.0-23
@@ -68,3 +73,5 @@ xdg-desktop-portal-gnome 49.0-1
 xdg-desktop-portal-gtk 1.15.3-1
 xdg-utils 1.2.1-1
 xwayland-satellite 0.7-1
+zathura 0.5.14-1
+zathura-pdf-mupdf 0.4.6-3
