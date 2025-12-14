@@ -27,6 +27,7 @@ return {
 				lua = { "stylua" },
 				python = { "ruff_organize_imports", "ruff_format" },
 				bash = { "shfmt" },
+				jinja = { "djlint" },
 			},
 			-- Set default options
 			default_format_opts = {
