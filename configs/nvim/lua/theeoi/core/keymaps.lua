@@ -36,7 +36,7 @@ keymap.set({ "v" }, ">", ">gv")
 -- Open netrw explorer in current buffer
 keymap.set({ "n" }, "<leader>e", funcs.OpenNetrw, { desc = "Open NetRW in the current split." })
 
--- Splitting windows and using tabs/buffers
+-- Splitting windows and using tabs/buffers/args
 keymap.set("n", "<leader>sl", "<C-w>v", { desc = "Split window vertically." })
 keymap.set("n", "<leader>sj", "<C-w>s", { desc = "Split window horizontally." })
 keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split." })
@@ -48,6 +48,15 @@ keymap.set("n", "<leader>tl", "<cmd>tabn<CR>", { desc = "Go to next tab." })
 keymap.set("n", "<leader>th", "<cmd>tabp<CR>", { desc = "Go to previous tab." })
 
 keymap.set("n", "<leader>bb", "<cmd>buffers<CR>:b<space>", { desc = "List and pick current buffers." })
+
+keymap.set("n", "<leader>as", "<C-L><cmd>args<CR>", { desc = "Show args list." })
+keymap.set("n", "<leader>aa", "<cmd>$arge %<bar>argded<bar>args<CR>", { desc = "Add current buffer to args list." })
+keymap.set("n", "<leader>ad", "<cmd>argd %<bar>args<CR>", { desc = "Delete selected arg." })
+keymap.set("n", "<leader>ac", "<cmd>%argd<CR><C-L>", { desc = "Clear args list." })
+keymap.set("n", "<leader>ah", funcs.ArgsNavPrev)
+keymap.set("n", "<leader>aH", "<cmd>first<bar>args<CR><Esc>")
+keymap.set("n", "<leader>al", funcs.ArgsNavNext)
+keymap.set("n", "<leader>aL", "<cmd>last<bar>args<CR><Esc>")
 
 -- Map <A-j>, <A-k>, <A-h>, <A-l> to navigate between windows in any modes
 keymap.set({ "t", "i" }, "<A-h>", "<C-\\><C-n><C-w>h")

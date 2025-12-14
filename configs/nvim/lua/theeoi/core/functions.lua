@@ -15,5 +15,28 @@ function M.OpenNetrw()
 	end
 end
 
+function M.NavArglist(count)
+	local arglen = vim.fn.argc()
+	if arglen == 0 then
+		return
+	end
+
+	local next = (vim.fn.argidx() + count) % arglen
+	if next < 0 then
+		next = next + arglen
+	end
+
+	vim.cmd((next + 1) .. "argu")
+end
+
+function M.ArgsNavPrev()
+	M.NavArglist(vim.v.count1 * -1)
+	vim.cmd("silent args")
+end
+function M.ArgsNavNext()
+	M.NavArglist(vim.v.count1)
+	vim.cmd("silent args")
+end
+
 -- Return M so it can be 'required'
 return M
