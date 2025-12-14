@@ -23,11 +23,10 @@ tooltip label {
 }
 
 #clock,
-#battery,
-#network,
-#pulseaudio,
 #bluetooth,
-#tray {
+#pulseaudio,
+#network,
+#battery {
     background-color: rgba(40, 42, 54, 0.5);
     border: 2px solid rgba(98, 114, 164, 0.8);
     border-radius: 15px;
@@ -39,8 +38,17 @@ tooltip label {
     margin-left: 0;
 }
 
+#pulseaudio {
+    padding: 0 14px 0 8px;
+}
+
+#network {
+    padding: 0 14px 0 8px;
+}
+
 #battery {
     margin-right: 0;
+    padding: 0 13px 0 9px;
 }
 
 /*
