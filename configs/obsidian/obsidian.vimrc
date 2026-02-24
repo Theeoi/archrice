@@ -21,9 +21,9 @@ nnoremap zo :toggleFold<CR>
 nnoremap zc :toggleFold<CR>
 nnoremap za :toggleFold<CR>
 
-" Open quickswitcher
-exmap switcher obcommand switcher:open
-nnoremap <Space>o :switcher<CR>
+" Open Omnisearch
+exmap omnisearch obcommand omnisearch:show-modal
+nnoremap <Space>o :omnisearch<CR>
 
 " Focus on file explorer
 exmap fileExplorer obcommand file-explorer:open
