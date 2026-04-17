@@ -11,6 +11,21 @@ local keymap = vim.keymap
 -- Use jk to exit insert mode
 keymap.set({ "i" }, "jk", "<Esc>")
 
+-- Navigate visual lines when wrap is on
+keymap.set("n", "j", function()
+	if vim.v.count == 0 then
+		return vim.wo.wrap and "gj" or "j"
+	end
+	return "j"
+end, { expr = true })
+
+keymap.set("n", "k", function()
+	if vim.v.count == 0 then
+		return vim.wo.wrap and "gk" or "k"
+	end
+	return "k"
+end, { expr = true })
+
 -- Quickly save
 keymap.set({ "n" }, "<leader>w", "<cmd>w<CR>", { desc = "Save current file." })
 keymap.set({ "n" }, "<leader>W", "<cmd>wq<CR>", { desc = "Save and close current file." })
