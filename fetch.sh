@@ -9,7 +9,8 @@ cp -a /etc/greetd/config.toml ./configs/greetd
 cp -a /etc/niri/config.kdl ./configs/niri
 cp -a $XDG_CONFIG_HOME/swaylock/config ./configs/swaylock
 cp -a /etc/vimrc ./configs/vim
-cp -a $XDG_CONFIG_DIRS/waybar ./configs
+cp -a $XDG_CONFIG_DIRS/waybar/style.css ./configs/waybar
+cp -a $XDG_CONFIG_DIRS/waybar/config.jsonc ./configs/waybar
 cp -a $XDG_CONFIG_HOME/bash/bashrc ./configs/bash
 cp -a $XDG_CONFIG_HOME/mako/config ./configs/mako
 cp -a $XDG_CONFIG_DIRS/user-dirs.defaults ./configs/xdg-user-dirs
