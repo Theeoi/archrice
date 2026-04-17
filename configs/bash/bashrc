@@ -6,6 +6,7 @@
 [[ $- != *i* ]] && return
 
 export EDITOR=nvim
+export TEXMFHOME="$XDG_DATA_HOME/texmf"
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
