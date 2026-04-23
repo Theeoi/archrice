@@ -16,6 +16,7 @@
         "bluetooth",
         "pulseaudio",
         "network",
+        "custom/vpn",
         "battery"
     ],
     // Modules configuration
@@ -43,6 +44,12 @@
         "tooltip-format-wifi": "{essid} ({signalStrength}%)",
         "tooltip-format-ethernet": "{ipaddr}/{cidr}"
     },
+   "custom/vpn": {
+      "format": "{}",
+      "return-type": "json",
+      "interval": 5,
+      "exec": "/usr/local/bin/vpn-status.sh"
+  },
     "pulseaudio": {
         "format": "{icon} {format_source}",
         "format-bluetooth": "{icon} {format_source}",
