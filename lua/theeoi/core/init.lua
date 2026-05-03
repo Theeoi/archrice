@@ -1,5 +1,3 @@
-require("theeoi.core.options")
-require("theeoi.core.functions")
-require("theeoi.core.keymaps")
-require("theeoi.core.commands")
-require("theeoi.core.packages")
+require("theeoi.core.editor")
+require("theeoi.core.navigation")
+require("theeoi.core.ui")
