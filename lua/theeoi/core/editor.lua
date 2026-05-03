@@ -54,6 +54,12 @@ keymap.set({ "n" }, "N", "Nzz")
 keymap.set({ "v" }, "<", "<gv")
 keymap.set({ "v" }, ">", ">gv")
 
+-- Built-in undo tree. Load on demand because lazy.nvim adjusts 'runtimepath' after core setup.
+keymap.set({ "n" }, "<leader>u", function()
+	vim.cmd.packadd("nvim.undotree")
+	require("undotree").open()
+end, { desc = "Toggle Undotree." })
+
 -- Use 'cd' for viewing code diagnostics
 keymap.set({ "n" }, "<leader>cd", function()
 	vim.diagnostic.open_float({ scope = "cursor", source = true })
