@@ -54,6 +54,15 @@ keymap.set({ "n" }, "N", "Nzz")
 keymap.set({ "v" }, "<", "<gv")
 keymap.set({ "v" }, ">", ">gv")
 
+-- Use 'cd' for viewing code diagnostics
+keymap.set({ "n" }, "<leader>cd", function()
+	vim.diagnostic.open_float({ scope = "cursor", source = true })
+end, { desc = "Show diagnostic under cursor." })
+
+keymap.set({ "n" }, "<leader>cD", function()
+	vim.diagnostic.setloclist({ open = true })
+end, { desc = "Show buffer diagnostics." })
+
 -- Sync clipboard between OS and Neovim. Schedule the setting after `UiEnter` because it can
 -- increase startup-time. Remove this option if you want your OS clipboard to remain independent.
 -- See `:help 'clipboard'`
