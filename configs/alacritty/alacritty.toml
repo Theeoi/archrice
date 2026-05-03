@@ -1,9 +1,0 @@
-[general]
-import = [
-    "/usr/share/themes/alacritty/dracula/dracula.toml"
-]
-
-[window]
-decorations = "None"
-opacity = 0.9
-blur = true
