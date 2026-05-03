@@ -9,9 +9,9 @@ return {
 				"<leader>ff",
 				function()
 					require("conform").format({
-						lsp_fallback = true,
 						async = true,
 						timeout_ms = 500,
+						lsp_format = "fallback",
 					})
 				end,
 				mode = { "n", "v" },
@@ -26,18 +26,21 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				python = { "ruff_organize_imports", "ruff_format" },
-				bash = { "shfmt" },
 				jinja = { "djlint" },
+				sh = { "shfmt" },
+				bash = { "shfmt" },
+				tex = { "tex-fmt" },
+				latex = { "tex-fmt" },
 			},
 			-- Set default options
 			default_format_opts = {
-				lsp_format = "fallback",
+				lsp_format = "never",
 			},
 			-- Set up format-on-save
 			format_on_save = {
-				lsp_fallback = true,
 				async = false,
 				timeout_ms = 500,
+				lsp_format = "never",
 			},
 		},
 		init = function()
