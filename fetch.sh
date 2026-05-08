@@ -1,14 +1,14 @@
 #!/bin/sh
 
 # user configs are each their own subtree.
-git subtree pull --prefix=configs/alacritty "$XDG_CONFIG_HOME/alacritty" main
-git subtree pull --prefix=configs/swaylock "$XDG_CONFIG_HOME/swaylock" main
-git subtree pull --prefix=configs/bash "$XDG_CONFIG_HOME/bash" main
-git subtree pull --prefix=configs/mako "$XDG_CONFIG_HOME/mako" main
-git subtree pull --prefix=configs/fastfetch "$XDG_CONFIG_HOME/fastfetch" main
-git subtree pull --prefix=configs/nvim "$XDG_CONFIG_HOME/nvim" main
-git subtree pull --prefix=configs/latexmk "$XDG_CONFIG_HOME/latexmk" main
-git subtree pull --prefix=configs/tmux "$XDG_CONFIG_HOME/tmux" main
+git subtree pull --prefix=configs/alacritty -m "Update alacritty config subtree" "$XDG_CONFIG_HOME/alacritty" main
+git subtree pull --prefix=configs/swaylock -m "Update swaylock config subtree" "$XDG_CONFIG_HOME/swaylock" main
+git subtree pull --prefix=configs/bash -m "Update bash config subtree" "$XDG_CONFIG_HOME/bash" main
+git subtree pull --prefix=configs/mako -m "Update mako config subtree" "$XDG_CONFIG_HOME/mako" main
+git subtree pull --prefix=configs/fastfetch -m "Update fastfetch config subtree" "$XDG_CONFIG_HOME/fastfetch" main
+git subtree pull --prefix=configs/nvim -m "Update nvim config subtree" "$XDG_CONFIG_HOME/nvim" main
+git subtree pull --prefix=configs/latexmk -m "Update latexmk config subtree" "$XDG_CONFIG_HOME/latexmk" main
+git subtree pull --prefix=configs/tmux -m "Update tmux config subtree" "$XDG_CONFIG_HOME/tmux" main
 
 # store explicitly installed packages
 pacman -Qe >installed.txt
