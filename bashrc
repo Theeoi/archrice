@@ -43,7 +43,7 @@ if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
     if ! systemctl --user is-active --quiet tmux.service; then
         systemctl --user start tmux.service
     fi
-    exec tmux attach-session -d -t "${USER}" > /dev/null 2>&1
+    exec tmux new-session -A -s "${USER}" >/dev/null 2>&1
 fi
 
 export AUDIT_NUM=$(cat ~/.cache/auditnum.txt)
