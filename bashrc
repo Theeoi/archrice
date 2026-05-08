@@ -21,7 +21,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 function git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+    git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
 PS1=
@@ -31,8 +31,8 @@ fi
 PS1+=':\[\e[38;5;47;1m\]\w\[\e[0m\] \[\e[38;5;24m\]$(git_branch)\[\e[0m\] \[\e[38;5;214;1m\]>\[\e[0m\] '
 
 # Ensure only one ssh-agent is running
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
+if ! pgrep -u "$USER" ssh-agent >/dev/null; then
+    ssh-agent -t 1h >"$XDG_RUNTIME_DIR/ssh-agent.env"
 fi
 if [ ! -f "$SSH_AUTH_SOCK" ]; then
     source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
@@ -43,7 +43,7 @@ if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
     if ! systemctl --user is-active --quiet tmux.service; then
         systemctl --user start tmux.service
     fi
-    exec tmux attach-session -d -t "${USER}" > /dev/null 2>&1
+    exec tmux new-session -A -s "${USER}" >/dev/null 2>&1
 fi
 
 export AUDIT_NUM=$(cat ~/.cache/auditnum.txt)
