@@ -17,6 +17,10 @@ nnoremap zo :toggleFold<CR>
 nnoremap zc :toggleFold<CR>
 nnoremap za :toggleFold<CR>
 
+" Surround selection in a wikilink
+exmap wikilink surround [[ ]]
+vnoremap <Space>[ :wikilink<CR>
+
 " Open Omnisearch
 exmap omnisearch obcommand omnisearch:show-modal
 nnoremap <Space>o :omnisearch<CR>
