@@ -8,10 +8,6 @@ set clipboard=unnamed
 " Using <Space> as leader
 unmap <Space>
 
-" Navigate visual lines
-nnoremap j gj
-nnoremap k gk
-
 " Quickly remove search highlights
 nnoremap // :nohl<CR>
 
@@ -47,8 +43,8 @@ nnoremap <C-i> :forward<CR>
 exmap deleteFile obcommand app:delete-file
 nnoremap <Space>DD :deleteFile<CR>
 
-" Exit insertmode with jk
-inoremap jk <Esc>
+" Exit insertmode with jj
+inoremap jj <Esc>
 
 " Closing and saving
 exmap saveFile obcommand editor:save-file
