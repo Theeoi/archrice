@@ -17,7 +17,7 @@ alias mkdir='mkdir -p'
 alias cp='cp -i'
 alias mv='mv -i'
 alias df='df -h'
-alias clear='clear -x'
+alias clear='clear -x && fastfetch'
 
 alias ..='cd ..'
 alias ...='cd ../..'
