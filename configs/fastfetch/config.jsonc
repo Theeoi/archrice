@@ -30,7 +30,7 @@
             "type": "packages",
             "key": "├󰏖",
             "keyColor": "#50fa7b",
-            "format": "{1} (pacman) {##6272a4}󱓾 {$AUDIT_NUM}{#}"
+            "format": "{pacman} (pacman) {##6272a4}󱓾 {$AUDIT_NUM}{#}"
         },
         {
             "type": "shell",
@@ -68,7 +68,8 @@
         {
             "type": "gpu",
             "key": "├󰍛",
-            "keyColor": "#ff79c6"
+            "keyColor": "#ff79c6",
+            "format": "{vendor} {name} @ {frequency}"
         },
         {
             "type": "disk",
