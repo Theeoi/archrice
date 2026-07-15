@@ -7,6 +7,9 @@
 
 export EDITOR=nvim
 export TEXMFHOME="$XDG_DATA_HOME/texmf"
+export TEXMFVAR="$XDG_CACHE_HOME/texlive/texmf-var"
+export TEXMFCONFIG="$XDG_CONFIG_HOME/texlive/texmf-config"
+export CODEX_HOME="$XDG_CONFIG_HOME/codex"
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -14,7 +17,7 @@ alias mkdir='mkdir -p'
 alias cp='cp -i'
 alias mv='mv -i'
 alias df='df -h'
-alias clear='clear -x'
+alias clear='clear -x && fastfetch'
 
 alias ..='cd ..'
 alias ...='cd ../..'
