@@ -72,6 +72,7 @@
         },
         {
             "type": "disk",
+            "hideFS": "fuse.sshfs",
             "key": "├",
             "keyColor": "#ff79c6"
         },
