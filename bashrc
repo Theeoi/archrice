@@ -33,6 +33,24 @@ if [[ $SSH_CONNECTION ]]; then
 fi
 PS1+=':\[\e[38;5;47;1m\]\w\[\e[0m\] \[\e[38;5;24m\]$(git_branch)\[\e[0m\] \[\e[38;5;214;1m\]>\[\e[0m\] '
 
+# Ensure history is preserved and synced between bash processes.
+# Also ignore consecutive duplicate history entries
+shopt -s histappend
+HISTCONTROL="${HISTCONTROL:+$HISTCONTROL:}ignoredups"
+
+bash_history_sync() {
+    builtin history -a
+    builtin history -n
+}
+
+case ";${PROMPT_COMMAND-};" in
+*";bash_history_sync;"*)
+    ;;
+*)
+    PROMPT_COMMAND="bash_history_sync${PROMPT_COMMAND:+; $PROMPT_COMMAND}"
+    ;;
+esac
+
 # Ensure only one ssh-agent is running
 agent_env="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}/ssh-agent.env"
 
