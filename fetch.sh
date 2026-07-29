@@ -25,6 +25,7 @@ rsync -a --delete $XDG_CONFIG_DIRS/waybar/style.css ./configs/waybar
 rsync -a --delete $XDG_CONFIG_DIRS/waybar/config.jsonc ./configs/waybar
 rsync -a --delete $XDG_CONFIG_DIRS/user-dirs.defaults ./configs/xdg-user-dirs
 
+rsync -a --delete /etc/fonts/local.conf ./configs/font
 rsync -a --delete /usr/local/bin/* ./scripts
 
 rsync -a --delete $HOME/images/wallpapers .

@@ -78,7 +78,7 @@ texlive-xetex 2026.1-1
 thunderbird 152.0-1
 tmux 3.7_b-1
 tmuxp 1.74.0-1
-ttf-mononoki-nerd 3.4.0-2
+ttf-0xproto-nerd 3.4.0-2
 ttf-nerd-fonts-symbols 3.4.0-1
 udiskie 2.6.2-1
 unzip 6.0-23
