@@ -38,9 +38,10 @@
         "format-connected": " {device_alias}"
     },
     "network": {
-        "format-wifi": "",
-        "format-ethernet": "",
-        "format-disconnected": "⚠",
+        "format-wifi": "{icon}",
+        "format-ethernet": "",
+        "format-disconnected": "󰤮",
+        "format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"],
         "tooltip-format-wifi": "{essid} ({signalStrength}%)",
         "tooltip-format-ethernet": "{ipaddr}/{cidr}"
     },
@@ -51,12 +52,12 @@
       "exec": "/usr/local/bin/vpn-status.sh"
   },
     "pulseaudio": {
-        "format": "{icon} {format_source}",
-        "format-bluetooth": "{icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "",
-        "format-source-muted": "",
+        "format": "{icon}  {format_source}",
+        "format-muted": "  {format_source}",
+        "format-source": "󰍬",
+        "format-source-muted": "󰍭",
+        "format-bluetooth": "{icon}  {format_source}",
+        "format-bluetooth-muted": "  {format_source}",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -64,7 +65,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": [" ", " ", " "]
+            "default": ["", "", "", ""]
         }
     }
 }
