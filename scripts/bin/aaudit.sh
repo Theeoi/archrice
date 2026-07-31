@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -euo pipefail
 
@@ -10,9 +10,9 @@ cleanup() {
 }
 trap cleanup EXIT
 
-if arch-audit > "$TMP"; then
-    count=$(wc -l < "$TMP" | tr -d '[:space:]')
-    printf '%s\n' "$count" > "${TMP}.out"
+if arch-audit >"$TMP"; then
+    count=$(wc -l <"$TMP" | tr -d '[:space:]')
+    printf '%s\n' "$count" >"${TMP}.out"
     mv -f "${TMP}.out" "$TARGET"
 else
     logger -t arch-audit "arch-audit failed, keeping previous $TARGET"

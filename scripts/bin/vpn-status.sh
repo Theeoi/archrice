@@ -1,8 +1,8 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 vpn=$(
     nmcli -t -f NAME,TYPE connection show --active |
-    awk -F: '$2 == "vpn" { print $1; exit }'
+        awk -F: '$2 == "vpn" { print $1; exit }'
 )
 
 if [ -n "$vpn" ]; then
@@ -11,4 +11,3 @@ if [ -n "$vpn" ]; then
 else
     printf '{"text":"","tooltip":""}\n'
 fi
-
