@@ -78,9 +78,6 @@ unset -f ssh_agent_is_available
 
 # Startup default tmux session every time
 if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
-    if ! systemctl --user is-active --quiet tmux.service; then
-        systemctl --user start tmux.service
-    fi
     exec tmux new-session -A -s "${USER}" >/dev/null 2>&1
 fi
 
