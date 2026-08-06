@@ -1,16 +1,16 @@
 #!/bin/sh
 
 # user configs are each their own subtree.
-git subtree pull --prefix=configs/alacritty -m "Update alacritty config subtree" "$XDG_CONFIG_HOME/alacritty" main
-git subtree pull --prefix=configs/swaylock -m "Update swaylock config subtree" "$XDG_CONFIG_HOME/swaylock" main
-git subtree pull --prefix=configs/bash -m "Update bash config subtree" "$XDG_CONFIG_HOME/bash" main
-git subtree pull --prefix=configs/mako -m "Update mako config subtree" "$XDG_CONFIG_HOME/mako" main
-git subtree pull --prefix=configs/fastfetch -m "Update fastfetch config subtree" "$XDG_CONFIG_HOME/fastfetch" main
-git subtree pull --prefix=configs/nvim -m "Update nvim config subtree" "$XDG_CONFIG_HOME/nvim" main
-git subtree pull --prefix=configs/latexmk -m "Update latexmk config subtree" "$XDG_CONFIG_HOME/latexmk" main
-git subtree pull --prefix=configs/tmux -m "Update tmux config subtree" "$XDG_CONFIG_HOME/tmux" main
-git subtree pull --prefix=configs/systemd -m "Update systemd config subtree" "$XDG_CONFIG_HOME/systemd/user" main
-git subtree pull --prefix=configs/git -m "Update git config subtree" "$XDG_CONFIG_HOME/git" main
+git subtree pull --prefix=configs/alacritty -m "Updated alacritty config subtree" "$XDG_CONFIG_HOME/alacritty" main
+git subtree pull --prefix=configs/swaylock -m "Updated swaylock config subtree" "$XDG_CONFIG_HOME/swaylock" main
+git subtree pull --prefix=configs/bash -m "Updated bash config subtree" "$XDG_CONFIG_HOME/bash" main
+git subtree pull --prefix=configs/mako -m "Updated mako config subtree" "$XDG_CONFIG_HOME/mako" main
+git subtree pull --prefix=configs/fastfetch -m "Updated fastfetch config subtree" "$XDG_CONFIG_HOME/fastfetch" main
+git subtree pull --prefix=configs/nvim -m "Updated nvim config subtree" "$XDG_CONFIG_HOME/nvim" main
+git subtree pull --prefix=configs/latexmk -m "Updated latexmk config subtree" "$XDG_CONFIG_HOME/latexmk" main
+git subtree pull --prefix=configs/tmux -m "Updated tmux config subtree" "$XDG_CONFIG_HOME/tmux" main
+git subtree pull --prefix=configs/systemd -m "Updated systemd config subtree" "$XDG_CONFIG_HOME/systemd/user" main
+git subtree pull --prefix=configs/git -m "Updated git config subtree" "$XDG_CONFIG_HOME/git" main
 
 rsync -a --delete $HOME/documents/obsidian-vault/.obsidian.vimrc ./configs/obsidian/obsidian.vimrc
 rsync -a --delete $HOME/documents/obsidian-vault/.obsidian/{community-plugins,hotkeys}.json ./configs/obsidian
