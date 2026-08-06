@@ -10,6 +10,7 @@ git subtree pull --prefix=configs/nvim -m "Update nvim config subtree" "$XDG_CON
 git subtree pull --prefix=configs/latexmk -m "Update latexmk config subtree" "$XDG_CONFIG_HOME/latexmk" main
 git subtree pull --prefix=configs/tmux -m "Update tmux config subtree" "$XDG_CONFIG_HOME/tmux" main
 git subtree pull --prefix=configs/systemd -m "Update systemd config subtree" "$XDG_CONFIG_HOME/systemd/user" main
+git subtree pull --prefix=configs/git -m "Update git config subtree" "$XDG_CONFIG_HOME/git" main
 
 rsync -a --delete $HOME/documents/obsidian-vault/.obsidian.vimrc ./configs/obsidian/obsidian.vimrc
 rsync -a --delete $HOME/documents/obsidian-vault/.obsidian/{community-plugins,hotkeys}.json ./configs/obsidian

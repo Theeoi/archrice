@@ -1,0 +1,11 @@
+[user]
+    email = me@theodorblom.com
+    name = Theodor Blom
+[init]
+    defaultBranch = main
+[push]
+    autoSetupRemote = true
+[core]
+	quotepath = false
+[format]
+	pretty = format:%C(yellow)%h%C(reset) - %C(cyan)%an%C(reset) %C(dim white)%ar%C(reset) %C(blue)%d%C(reset)%n%C(bold)%s%C(reset)%n%b
