@@ -11,11 +11,13 @@ git subtree pull --prefix=configs/latexmk -m "Update latexmk config subtree" "$X
 git subtree pull --prefix=configs/tmux -m "Update tmux config subtree" "$XDG_CONFIG_HOME/tmux" main
 git subtree pull --prefix=configs/systemd -m "Update systemd config subtree" "$XDG_CONFIG_HOME/systemd/user" main
 
-# store explicitly installed packages
-pacman -Qe >installed.txt
-
 rsync -a --delete $HOME/documents/obsidian-vault/.obsidian.vimrc ./configs/obsidian/obsidian.vimrc
 rsync -a --delete $HOME/documents/obsidian-vault/.obsidian/{community-plugins,hotkeys}.json ./configs/obsidian
+
+rsync -a --delete $HOME/images/wallpapers .
+
+# store explicitly installed packages
+pacman -Qe >installed.txt
 
 # root-owned configs are not subtrees since using sudo git is not the best idea
 rsync -a --delete $XDG_CONFIG_DIRS/fuzzel/fuzzel.ini ./configs/fuzzel
@@ -25,10 +27,7 @@ rsync -a --delete /etc/vimrc ./configs/vim
 rsync -a --delete $XDG_CONFIG_DIRS/waybar/style.css ./configs/waybar
 rsync -a --delete $XDG_CONFIG_DIRS/waybar/config.jsonc ./configs/waybar
 rsync -a --delete $XDG_CONFIG_DIRS/user-dirs.defaults ./configs/xdg-user-dirs
-
-rsync -a --delete /etc/fonts/local.conf ./configs/font
+rsync -a --delete /etc/fonts/local.conf ./configs/fontconfig
 
 rsync -a --delete /usr/local/bin/* ./scripts/bin
 rsync -a --delete /usr/local/lib/* ./scripts/lib
-
-rsync -a --delete $HOME/images/wallpapers .
