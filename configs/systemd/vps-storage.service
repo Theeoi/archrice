@@ -1,0 +1,18 @@
+[Unit]
+Description=Mount VPS storage with SSHFS
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=exec
+ExecStart=/usr/bin/sshfs vps-storage: %h/vps-storage \
+    -f \
+    -o reconnect \
+    -o ServerAliveInterval=10 \
+    -o ServerAliveCountMax=3
+ExecStop=/usr/bin/fusermount3 -u %h/vps-storage
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

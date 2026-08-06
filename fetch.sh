@@ -9,6 +9,7 @@ git subtree pull --prefix=configs/fastfetch -m "Update fastfetch config subtree"
 git subtree pull --prefix=configs/nvim -m "Update nvim config subtree" "$XDG_CONFIG_HOME/nvim" main
 git subtree pull --prefix=configs/latexmk -m "Update latexmk config subtree" "$XDG_CONFIG_HOME/latexmk" main
 git subtree pull --prefix=configs/tmux -m "Update tmux config subtree" "$XDG_CONFIG_HOME/tmux" main
+git subtree pull --prefix=configs/systemd -m "Update systemd config subtree" "$XDG_CONFIG_HOME/systemd/user" main
 
 # store explicitly installed packages
 pacman -Qe >installed.txt
