@@ -5,6 +5,11 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+shopt -s globstar # Enable the use of ** in `ls` and `cd`
+# Automagically correct small errors in directory names
+shopt -s cdspell
+shopt -s dirspell
+
 export EDITOR=nvim
 export TEXMFHOME="$XDG_DATA_HOME/texmf"
 export TEXMFVAR="$XDG_CACHE_HOME/texlive/texmf-var"
