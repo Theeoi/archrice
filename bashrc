@@ -42,6 +42,7 @@ PS1+=':\[\e[38;5;47;1m\]\w\[\e[0m\] \[\e[38;5;24m\]$(git_branch)\[\e[0m\] \[\e[3
 # Also ignore consecutive duplicate history entries
 shopt -s histappend
 HISTCONTROL="${HISTCONTROL:+$HISTCONTROL:}ignoredups"
+HISTTIMEFORMAT="%F %T "
 
 bash_history_sync() {
     builtin history -a
