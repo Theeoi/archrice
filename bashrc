@@ -5,6 +5,11 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+shopt -s globstar # Enable the use of ** in `ls` and `cd`
+# Automagically correct small errors in directory names
+shopt -s cdspell
+shopt -s dirspell
+
 export EDITOR=nvim
 export TEXMFHOME="$XDG_DATA_HOME/texmf"
 export TEXMFVAR="$XDG_CACHE_HOME/texlive/texmf-var"
@@ -37,6 +42,7 @@ PS1+=':\[\e[38;5;47;1m\]\w\[\e[0m\] \[\e[38;5;24m\]$(git_branch)\[\e[0m\] \[\e[3
 # Also ignore consecutive duplicate history entries
 shopt -s histappend
 HISTCONTROL="${HISTCONTROL:+$HISTCONTROL:}ignoredups"
+HISTTIMEFORMAT="%F %T "
 
 bash_history_sync() {
     builtin history -a
