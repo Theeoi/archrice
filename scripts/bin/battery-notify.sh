@@ -47,7 +47,7 @@ check_battery() {
     if ((percentage <= 20)); then
         if [[ "$last" != "20" ]]; then
             if notify-send \
-                --urgency=high \
+                --urgency=critical \
                 "Battery is critically low" \
                 "Battery is at ${percentage}%"; then
                 printf '%s\n' 20 >"$STATE_FILE"
