@@ -17,7 +17,7 @@ return {
 			if vim.fn.executable("lua-language-server") == 1 then
 				vim.lsp.config("lua_ls", {
 					cmd = { "lua-language-server" },
-					filetypes = { "lua" },
+					filetypes = { "lua", "luau" },
 					root_markers = { "init.lua" },
 					settings = {
 						Lua = {
