@@ -26,6 +26,8 @@ return {
 				bash = { "shfmt" },
 				tex = { "tex-fmt" },
 				latex = { "tex-fmt" },
+				json = { "biome" },
+				jsonc = { "biome" },
 			},
 			default_format_opts = {
 				lsp_format = "never",

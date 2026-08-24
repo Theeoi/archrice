@@ -52,6 +52,17 @@ return {
 
 				vim.lsp.enable("ltex_plus")
 			end
+
+			-- JSON
+			if vim.fn.executable("biome") == 1 then
+				vim.lsp.config("biome", {
+					cmd = { "biome" },
+					filetypes = { "json", "jsonc" },
+					root_markers = {},
+				})
+
+				vim.lsp.enable("biome")
+			end
 		end,
 	},
 }
