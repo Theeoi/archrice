@@ -18,6 +18,8 @@ return {
 				python = {}, -- Using LSP instead
 				jinja = { "djlint" },
 				tex = {}, -- Using LSP instead
+				json = { "biome" },
+				jsonc = { "biome" },
 			},
 		},
 		config = function(_, opts)

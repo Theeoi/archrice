@@ -17,7 +17,7 @@ return {
 			if vim.fn.executable("lua-language-server") == 1 then
 				vim.lsp.config("lua_ls", {
 					cmd = { "lua-language-server" },
-					filetypes = { "lua" },
+					filetypes = { "lua", "luau" },
 					root_markers = { "init.lua" },
 					settings = {
 						Lua = {
@@ -51,6 +51,17 @@ return {
 				})
 
 				vim.lsp.enable("ltex_plus")
+			end
+
+			-- JSON
+			if vim.fn.executable("biome") == 1 then
+				vim.lsp.config("biome", {
+					cmd = { "biome" },
+					filetypes = { "json", "jsonc" },
+					root_markers = {},
+				})
+
+				vim.lsp.enable("biome")
 			end
 		end,
 	},
