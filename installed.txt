@@ -46,6 +46,7 @@ networkmanager 1.56.1-1
 networkmanager-openvpn 1.12.5-1
 niri 26.04-1
 noto-fonts-emoji 1:2.051-1
+npm 12.0.2-1
 obsidian 1.12.7-3
 openai-codex 0.144.4-1
 openvpn 2.7.5-1
