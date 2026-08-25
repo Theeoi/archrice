@@ -13,7 +13,7 @@ rfkill_id=""
 for d in /sys/class/rfkill/rfkill*; do
     [ -r "$d/name" ] || continue
 
-    if [ "$(cat '$d/name')" = "tpacpi_bluetooth_sw" ]; then
+    if [ "$(cat "$d/name")" = "tpacpi_bluetooth_sw" ]; then
         rfkill_id=$d
         break
     fi
@@ -22,7 +22,7 @@ done
 [ -n "$rfkill_id" ] || exit 0
 
 # Only continue if Bluetooth was disabled before hibernation.
-[ "$(cat '$rfkill_id/soft')" = "1" ] || exit 0
+[ "$(cat "$rfkill_id/soft")" = "1" ] || exit 0
 
 # On wake-up, bluetooth hardware is powered on despite software block.
 # If it is NOT found, exit the script.
@@ -32,7 +32,7 @@ while [ "$i" -lt 30 ]; do
     for d in /sys/class/rfkill/rfkill*; do
         [ -r "$d/name" ] || continue
 
-        if [ "$(cat '$d/name')" = "hci0" ]; then
+        if [ "$(cat "$d/name")" = "hci0" ]; then
             hci_present=1
             break
         fi
