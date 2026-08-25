@@ -1,0 +1,12 @@
+[Unit]
+Description=Desktop wallpaper
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/swaybg -m fill -i %h/.local/state/wallpaper/current
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target
