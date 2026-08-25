@@ -4,10 +4,10 @@ readonly BAT_DEVICE="/org/freedesktop/UPower/devices/DisplayDevice"
 readonly STATE_FILE="${XDG_RUNTIME_DIR}/battery-notification-state"
 
 check_battery() {
-    local state percentage last=""
+    local state percentage time_to_empty last=""
 
     # Collect relevant variables from upower
-    read -r state percentage < <(
+    read -r state percentage time_to_empty < <(
         upower --show-info "$BAT_DEVICE" |
             awk '
                 $1 == "state:" {
@@ -17,8 +17,12 @@ check_battery() {
                     gsub(/%/, "", $2)
                     percentage = int($2)
                 }
+                $1 == "time" && $2 == "to" && $3 == "empty:" {
+                    sub(/^[[:space:]]*time to empty:[[:space:]]*/, "")
+                    time_to_empty = $0
+                }
                 END {
-                    print state, percentage
+                    print state, percentage, time_to_empty
                 }
             '
     )
@@ -30,7 +34,7 @@ check_battery() {
     # Don't do anything during undefined state
     case "$state" in
     charging | fully-charged | pending-charge)
-        rm -r "$STATE_FILE"
+        [[ -f "$STATE_FILE" ]] && rm -r "$STATE_FILE"
         return
         ;;
     discharging)
@@ -44,12 +48,14 @@ check_battery() {
     [[ -f "$STATE_FILE" ]] && last=$(<"$STATE_FILE")
 
     # Define the notification levels and message
+    local message="${time_to_empty:+Estimated time remaining: $time_to_empty}"
+
     if ((percentage <= 20)); then
         if [[ "$last" != "20" ]]; then
             if notify-send \
                 --urgency=critical \
-                "Battery is critically low" \
-                "Battery is at ${percentage}%"; then
+                "Battery is critically low (${percentage}%)" \
+                "$message"; then
                 printf '%s\n' 20 >"$STATE_FILE"
             fi
         fi
@@ -57,8 +63,8 @@ check_battery() {
         if [[ -z "$last" ]]; then
             if notify-send \
                 --urgency=normal \
-                "Battery is low" \
-                "Battery is at ${percentage}%"; then
+                "Battery is low (${percentage}%)" \
+                "$message"; then
                 printf '%s\n' 35 >"$STATE_FILE"
             fi
         fi
