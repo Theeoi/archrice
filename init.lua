@@ -16,14 +16,12 @@ keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save current file." })
 keymap.set("n", "<leader>W", ":wq<CR>", { desc = "Save and close current file." })
 
 -- Quickly quit
-keymap.set("n", "<leader>Q", ":q<CR>", { desc = "Close the current buffer." })
+keymap.set("n", "<leader>Q", ":q<CR>", { desc = "Close the current pane." })
 
 -- Open explorer. (Find files with <leader>ff)
-obkeymap.set("<leader>e", ":explorer<CR>", { desc = "Open explorer." })
-keymap.set("n", "<leader>e", ":explorer<CR>", { desc = "Open explorer." })
+keymap.set("n", "<leader>e", ":explorer<CR>", { desc = "Reveal file in explorer." })
 
 -- Toggle undotree.
-obkeymap.set("<leader>u", ":UndoTreeToggle<CR>", { desc = "Toggle Undotree." })
 keymap.set("n", "<leader>u", ":UndoTreeToggle<CR>", { desc = "Toggle Undotree." })
 
 -- Splitting windows and using tabs/buffers
@@ -34,11 +32,19 @@ keymap.set("n", "<leader>sl", ":vsplit<CR>", { desc = "Split window vertically."
 keymap.set("n", "<leader>sj", ":split<CR>", { desc = "Split window horizontally." })
 keymap.set("n", "<leader>sx", ":q<CR>", { desc = "Close current split." })
 
-obkeymap.set("<leader>tn", ":ob workspace:new-tab", { desc = "Open new tab." })
-obkeymap.set("<leader>tx", ":ob workspace:close", { desc = "Close current tab." })
-obkeymap.set("<leader>tl", ":ob workspace:next-tab", { desc = "Go to next tab." })
-obkeymap.set("<leader>th", ":ob workspace:previous-tab", { desc = "Go to previous tab." })
-keymap.set("n", "<leader>tn", ":tabnew<CR>", { desc = "Open new tab." })
+vim.api.nvim_create_user_command("NewTabPicker", function()
+	vim.obsidian.run_command("workspace:new-tab")
+
+	vim.schedule(function()
+		vim.obsidian.pick("files")
+	end)
+end, {})
+
+obkeymap.set("<leader>tn", ":NewTabPicker", { desc = "Pick file in new tab." })
+obkeymap.set("<leader>tx", ":obcommand workspace:close", { desc = "Close current tab." })
+obkeymap.set("<leader>tl", ":obcommand workspace:next-tab", { desc = "Go to next tab." })
+obkeymap.set("<leader>th", ":obcommand workspace:previous-tab", { desc = "Go to previous tab." })
+keymap.set("n", "<leader>tn", ":NewTabPicker<CR>", { desc = "Pick file in new tab." })
 keymap.set("n", "<leader>tx", ":tabclose<CR>", { desc = "Close current tab." })
 keymap.set("n", "<leader>tl", ":nexttab<CR>", { desc = "Go to next tab." })
 keymap.set("n", "<leader>th", ":prevtab<CR>", { desc = "Go to previous tab." })
