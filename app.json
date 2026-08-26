@@ -3,7 +3,7 @@
   "vimMode": false,
   "useTab": false,
   "showLineNumber": false,
-  "focusNewTab": false,
+  "focusNewTab": true,
   "alwaysUpdateLinks": true,
   "attachmentFolderPath": "./attachments",
   "readableLineLength": true
