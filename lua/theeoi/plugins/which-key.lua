@@ -7,6 +7,7 @@ return {
 				{ "<leader>a", group = "Arguments" },
 				{ "<leader>b", group = "Buffers" },
 				{ "<leader>c", group = "Code" },
+				{ "<leader>f", group = "Fuzzyfind" },
 				{ "<leader>s", group = "Splits" },
 				{ "<leader>t", group = "Tabs" },
 				{ "gq", desc = "Format with formatexpr" },
