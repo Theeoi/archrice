@@ -28,6 +28,7 @@ return {
 				latex = { "tex-fmt" },
 				json = { "biome" },
 				jsonc = { "biome" },
+				yaml = { "yamlfix" },
 			},
 			default_format_opts = {
 				lsp_format = "never",

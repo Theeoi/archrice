@@ -20,6 +20,7 @@ return {
 				tex = {}, -- Using LSP instead
 				json = { "biome" },
 				jsonc = { "biome" },
+				yaml = { "yamllint" },
 			},
 		},
 		config = function(_, opts)
