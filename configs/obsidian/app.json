@@ -1,0 +1,10 @@
+{
+  "showInlineTitle": true,
+  "vimMode": false,
+  "useTab": false,
+  "showLineNumber": false,
+  "focusNewTab": true,
+  "alwaysUpdateLinks": true,
+  "attachmentFolderPath": "./attachments",
+  "readableLineLength": true
+}
