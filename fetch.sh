@@ -12,11 +12,9 @@ git subtree pull --prefix=configs/latexmk -m "Updated latexmk config subtree" "$
 git subtree pull --prefix=configs/tmux -m "Updated tmux config subtree" "$XDG_CONFIG_HOME/tmux" main
 git subtree pull --prefix=configs/systemd -m "Updated systemd config subtree" "$XDG_CONFIG_HOME/systemd/user" main
 git subtree pull --prefix=configs/git -m "Updated git config subtree" "$XDG_CONFIG_HOME/git" main
+git subtree pull --prefix=configs/obsidian -m "Updated obsidian config subtree" "$HOME/documents/obsidian-vault/.obsidian" main
 
 git subtree pull --prefix=scripts/user-bin -m "Updated user bin subtree" "$HOME/.local/bin" main
-
-rsync -a --delete $HOME/documents/obsidian-vault/.obsidian.vimrc ./configs/obsidian/obsidian.vimrc
-rsync -a --delete $HOME/documents/obsidian-vault/.obsidian/{community-plugins,hotkeys}.json ./configs/obsidian
 
 rsync -a --delete $HOME/images/wallpapers .
 
