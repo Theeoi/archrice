@@ -29,8 +29,8 @@ vim.cmd.packadd("nohlsearch")
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
--- Use jk to exit insert mode
-keymap.set({ "i" }, "jk", "<Esc>")
+-- Use jj to exit insert mode
+keymap.set({ "i" }, "jj", "<Esc>")
 
 -- Quickly save
 keymap.set({ "n" }, "<leader>w", "<cmd>w<CR>", { desc = "Save current file." })
