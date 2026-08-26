@@ -28,6 +28,20 @@ return {
 				on_highlights = function(colors, color)
 					return {
 						-- Normal = { fg = colors.mycolor }
+						FlashLabel = {
+							fg = colors.base03,
+							bg = colors.green,
+							bold = true,
+						},
+						FlashCurrent = {
+							fg = colors.green,
+							bg = colors.shade_green,
+							bold = true,
+						},
+						FlashMatch = {
+							fg = colors.green,
+							bg = colors.shade_green,
+						},
 					}
 				end,
 				plugins = {
