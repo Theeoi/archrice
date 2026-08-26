@@ -63,6 +63,17 @@ return {
 
 				vim.lsp.enable("biome")
 			end
+
+			-- YAML
+			if vim.fn.executable("yaml-language-server") == 1 then
+				vim.lsp.config("yaml_ls", {
+					cmd = { "yaml-language-server", "--stdio" },
+					filetypes = { "yaml" },
+					root_markers = {},
+				})
+
+				vim.lsp.enable("yaml_ls")
+			end
 		end,
 	},
 }
