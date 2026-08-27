@@ -12,17 +12,11 @@ return {
 				desc = "Lint current file.",
 			},
 		},
-		opts = {
-			linters_by_ft = {
-				lua = {}, -- Using LSP instead
-				python = {}, -- Using LSP instead
-				jinja = { "djlint" },
-				tex = {}, -- Using LSP instead
-				json = { "biome" },
-				jsonc = { "biome" },
-				yaml = { "yamllint" },
-			},
-		},
+		opts = function()
+			return {
+				linters_by_ft = require("theeoi.languages").linters_by_ft,
+			}
+		end,
 		config = function(_, opts)
 			local lint = require("lint")
 

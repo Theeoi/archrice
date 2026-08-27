@@ -17,28 +17,20 @@ return {
 				desc = "Format buffer",
 			},
 		},
-		opts = {
-			formatters_by_ft = {
-				lua = { "stylua" },
-				python = { "ruff_organize_imports", "ruff_format" },
-				jinja = { "djlint" },
-				sh = { "shfmt" },
-				bash = { "shfmt" },
-				tex = { "tex-fmt" },
-				latex = { "tex-fmt" },
-				json = { "biome" },
-				jsonc = { "biome" },
-				yaml = { "yamlfix" },
-			},
-			default_format_opts = {
-				lsp_format = "never",
-			},
-			format_on_save = {
-				async = false,
-				timeout_ms = 500,
-				lsp_format = "never",
-			},
-		},
+		opts = function()
+			local languages = require("theeoi.languages")
+			return {
+				formatters_by_ft = languages.formatters_by_ft,
+				default_format_opts = {
+					lsp_format = "never",
+				},
+				format_on_save = {
+					async = false,
+					timeout_ms = 500,
+					lsp_format = "never",
+				},
+			}
+		end,
 		init = function()
 			vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
 		end,
