@@ -49,7 +49,9 @@ niri 26.04-1
 noto-fonts-emoji 1:2.051-1
 npm 12.0.2-1
 obsidian 1.12.7-3
+ollama 0.32.15-1
 openai-codex 0.144.4-1
+opencode 1.18.19-1
 openvpn 2.7.5-1
 otf-font-awesome 7.3.0-1
 pacman-contrib 1.13.1-1
