@@ -11,8 +11,11 @@ opt.softtabstop = 4
 opt.shiftwidth = 4
 opt.autoindent = true
 
--- Do not wrap lines by default
+-- Do not wrap lines by default, aim for sane textwidth but do not break text
+-- autmatically.
 opt.wrap = false
+opt.textwidth = 80
+opt.formatoptions:remove("t")
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 opt.ignorecase = true
@@ -34,10 +37,20 @@ keymap.set({ "i" }, "jj", "<Esc>")
 
 -- Quickly save
 keymap.set({ "n" }, "<leader>w", "<cmd>w<CR>", { desc = "Save current file." })
-keymap.set({ "n" }, "<leader>W", "<cmd>wq<CR>", { desc = "Save and close current file." })
+keymap.set(
+	{ "n" },
+	"<leader>W",
+	"<cmd>wq<CR>",
+	{ desc = "Save and close current file." }
+)
 
 -- Quickly quit
-keymap.set({ "n" }, "<leader>Q", "<cmd>q<CR>", { desc = "Close the current buffer." })
+keymap.set(
+	{ "n" },
+	"<leader>Q",
+	"<cmd>q<CR>",
+	{ desc = "Close the current buffer." }
+)
 
 -- Use <Esc> to exit terminal mode
 keymap.set("t", "<Esc>", "<C-\\><C-n>")
@@ -46,7 +59,12 @@ keymap.set("t", "<Esc>", "<C-\\><C-n>")
 keymap.set({ "n", "o", "v" }, "¤", "$")
 
 -- Nice searching
-keymap.set({ "n" }, "//", "<cmd>nohlsearch<CR>", { desc = "Clear search highlights." })
+keymap.set(
+	{ "n" },
+	"//",
+	"<cmd>nohlsearch<CR>",
+	{ desc = "Clear search highlights." }
+)
 keymap.set({ "n" }, "n", "nzz")
 keymap.set({ "n" }, "N", "Nzz")
 
