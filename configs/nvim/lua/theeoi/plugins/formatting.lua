@@ -10,7 +10,7 @@ return {
 					require("conform").format({
 						async = true,
 						timeout_ms = 500,
-						lsp_format = "fallback",
+						lsp_format = "never",
 					})
 				end,
 				mode = { "n", "v" },
