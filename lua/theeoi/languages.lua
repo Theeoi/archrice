@@ -34,7 +34,7 @@ return {
 		},
 
 		ltex_plus = {
-			filetypes = { "tex", "latex", "markdown", "text" },
+			filetypes = { "tex", "markdown", "text" },
 			root_markers = {},
 		},
 
