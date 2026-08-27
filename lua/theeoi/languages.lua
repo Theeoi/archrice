@@ -2,6 +2,8 @@
 -- anything unlisted. Integration identifiers remain deliberately separate.
 return {
 	mason = {
+		"bash-language-server",
+		"shellcheck",
 		"lua-language-server",
 		"stylua",
 		"ruff",
@@ -17,6 +19,10 @@ return {
 	},
 
 	lsp = {
+		bashls = {
+			filetypes = { "sh", "bash" },
+			root_markers = {},
+		},
 		lua_ls = {
 			filetypes = { "lua", "luau" },
 			root_markers = { "init.lua" },
@@ -87,8 +93,8 @@ return {
 		markdown = {},
 		text = {},
 		jinja = { "djlint" },
-		sh = {},
-		bash = {},
+		sh = { "shellcheck" },
+		bash = { "shellcheck" },
 		tex = {},
 		json = {},
 		jsonc = {},
