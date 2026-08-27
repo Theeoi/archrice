@@ -9,7 +9,8 @@ return {
 		"djlint",
 		"shfmt",
 		"tex-fmt",
-		"biome",
+		"json-lsp",
+		"prettier",
 		"yaml-language-server",
 		"yamlfix",
 		"yamllint",
@@ -38,9 +39,13 @@ return {
 			root_markers = {},
 		},
 
-		biome = {
+		jsonls = {
 			filetypes = { "json", "jsonc" },
-			root_markers = {},
+			settings = {
+				json = {
+					validate = { enable = true },
+				},
+			},
 		},
 
 		yamlls = {
@@ -59,10 +64,20 @@ return {
 		sh = { "shfmt" },
 		bash = { "shfmt" },
 		tex = { "tex-fmt" },
-		latex = { "tex-fmt" },
-		json = { "biome" },
-		jsonc = { "biome" },
+		json = { "prettier" },
+		jsonc = { "prettier" },
 		yaml = { "yamlfix" },
+	},
+
+	formatters = {
+		prettier = {
+			prepend_args = {
+				"--tab-width",
+				"4",
+				"--use-tabs",
+				"false",
+			},
+		},
 	},
 
 	linters_by_ft = {
@@ -75,9 +90,8 @@ return {
 		sh = {},
 		bash = {},
 		tex = {},
-		latex = {},
-		json = { "biomejs" },
-		jsonc = { "biomejs" },
+		json = {},
+		jsonc = {},
 		yaml = { "yamllint" },
 	},
 }

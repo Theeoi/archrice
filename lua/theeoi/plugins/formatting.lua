@@ -21,6 +21,7 @@ return {
 			local languages = require("theeoi.languages")
 			return {
 				formatters_by_ft = languages.formatters_by_ft,
+				formatters = languages.formatters,
 				default_format_opts = {
 					lsp_format = "never",
 				},
