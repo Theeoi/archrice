@@ -1,6 +1,6 @@
--- Every Mason-managed package belongs in mason; startup cleanup removes
--- anything unlisted. Integration identifiers remain deliberately separate.
+-- Configuration variables for lsp.lua, linting.lua and formatting.lua
 return {
+	-- Every mason-managed package belongs here.
 	mason = {
 		"bash-language-server",
 		"shellcheck",
@@ -14,7 +14,6 @@ return {
 		"json-lsp",
 		"prettier",
 		"yaml-language-server",
-		"yamlfix",
 		"yamllint",
 	},
 
@@ -64,7 +63,7 @@ return {
 		lua = { "stylua" },
 		luau = { "stylua" },
 		python = { "ruff_organize_imports", "ruff_format" },
-		markdown = {},
+		markdown = { "prettier" },
 		text = {},
 		jinja = { "djlint" },
 		sh = { "shfmt" },
@@ -72,10 +71,19 @@ return {
 		tex = { "tex-fmt" },
 		json = { "prettier" },
 		jsonc = { "prettier" },
-		yaml = { "yamlfix" },
+		yaml = { "prettier" },
 	},
 
 	formatters = {
+		stylua = {
+			prepend_args = { "--column-width", "80" },
+		},
+		ruff_format = {
+			append_args = { "--line-length", "80" },
+		},
+		djlint = {
+			prepend_args = { "--max-line-length", "80" },
+		},
 		prettier = {
 			prepend_args = {
 				"--tab-width",
