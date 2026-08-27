@@ -1,6 +1,10 @@
 return {
 	{
 		"mason-org/mason.nvim",
+		dependencies = {
+			"neovim/nvim-lspconfig",
+			"WhoIsSethDaniel/mason-tool-installer.nvim",
+		},
 		opts = {
 			ui = {
 				icons = {
@@ -13,66 +17,26 @@ return {
 		config = function(_, opts)
 			require("mason").setup(opts)
 
-			-- LUA
-			if vim.fn.executable("lua-language-server") == 1 then
-				vim.lsp.config("lua_ls", {
-					cmd = { "lua-language-server" },
-					filetypes = { "lua", "luau" },
-					root_markers = { "init.lua" },
-					settings = {
-						Lua = {
-							diagnostics = {
-								globals = { "vim" },
-							},
-						},
-					},
-				})
+			local languages = require("theeoi.languages")
+			local mason_tool_installer = require("mason-tool-installer")
+			mason_tool_installer.setup({
+				ensure_installed = languages.mason,
+				auto_update = false,
+				run_on_start = true,
+			})
 
-				vim.lsp.enable("lua_ls")
-			end
+			local cleanup_group = vim.api.nvim_create_augroup("mason_tools_cleanup", { clear = true })
+			vim.api.nvim_create_autocmd("User", {
+				group = cleanup_group,
+				pattern = "MasonToolsUpdateCompleted",
+				callback = function()
+					mason_tool_installer.clean()
+				end,
+			})
 
-			-- PYTHON
-			if vim.fn.executable("ruff") == 1 then
-				vim.lsp.config("ruff", {
-					cmd = { "ruff", "server" },
-					filetypes = { "python" },
-					root_markers = { "pyproject.toml" },
-				})
-
-				vim.lsp.enable("ruff")
-			end
-
-			-- PROSE / LATEX
-			if vim.fn.executable("ltex-ls-plus") == 1 then
-				vim.lsp.config("ltex_plus", {
-					cmd = { "ltex-ls-plus" },
-					filetypes = { "tex", "markdown", "text" },
-					root_markers = {},
-				})
-
-				vim.lsp.enable("ltex_plus")
-			end
-
-			-- JSON
-			if vim.fn.executable("biome") == 1 then
-				vim.lsp.config("biome", {
-					cmd = { "biome" },
-					filetypes = { "json", "jsonc" },
-					root_markers = {},
-				})
-
-				vim.lsp.enable("biome")
-			end
-
-			-- YAML
-			if vim.fn.executable("yaml-language-server") == 1 then
-				vim.lsp.config("yaml_ls", {
-					cmd = { "yaml-language-server", "--stdio" },
-					filetypes = { "yaml" },
-					root_markers = {},
-				})
-
-				vim.lsp.enable("yaml_ls")
+			for server, config in pairs(languages.lsp) do
+				vim.lsp.config(server, config)
+				vim.lsp.enable(server)
 			end
 		end,
 	},
