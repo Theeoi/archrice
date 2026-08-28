@@ -3,6 +3,7 @@ return {
 	-- Every mason-managed package belongs here.
 	mason = {
 		"bash-language-server",
+		"basedpyright",
 		"shellcheck",
 		"lua-language-server",
 		"stylua",
@@ -33,17 +34,14 @@ return {
 				},
 			},
 		},
-
-		ruff = {
+		basedpyright = {
 			filetypes = { "python" },
 			root_markers = { "pyproject.toml" },
 		},
-
 		ltex_plus = {
 			filetypes = { "tex", "markdown", "text" },
 			root_markers = {},
 		},
-
 		jsonls = {
 			filetypes = { "json", "jsonc" },
 			settings = {
@@ -52,7 +50,6 @@ return {
 				},
 			},
 		},
-
 		yamlls = {
 			filetypes = { "yaml" },
 			root_markers = {},
@@ -97,7 +94,7 @@ return {
 	linters_by_ft = {
 		lua = {},
 		luau = {},
-		python = {},
+		python = { "ruff" },
 		markdown = {},
 		text = {},
 		jinja = { "djlint" },
