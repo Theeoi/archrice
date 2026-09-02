@@ -3,7 +3,7 @@
 set -euo pipefail
 
 TARGET="${1:-$HOME/.cache/auditnum.txt}"
-TMP="$(mktemp '${TARGET}.tmp.XXXXXX')"
+TMP="$(mktemp "${TARGET}.tmp.XXXXXX")"
 
 cleanup() {
     rm -f "$TMP"
