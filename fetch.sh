@@ -10,6 +10,7 @@ git subtree pull --prefix=configs/fastfetch -m "Updated fastfetch config subtree
 git subtree pull --prefix=configs/nvim -m "Updated nvim config subtree" "$XDG_CONFIG_HOME/nvim" main
 git subtree pull --prefix=configs/latexmk -m "Updated latexmk config subtree" "$XDG_CONFIG_HOME/latexmk" main
 git subtree pull --prefix=configs/tmux -m "Updated tmux config subtree" "$XDG_CONFIG_HOME/tmux" main
+git subtree pull --prefix=configs/tmuxp -m "Updated tmuxp config subtree" "$XDG_CONFIG_HOME/tmuxp" main
 git subtree pull --prefix=configs/systemd -m "Updated systemd config subtree" "$XDG_CONFIG_HOME/systemd/user" main
 git subtree pull --prefix=configs/git -m "Updated git config subtree" "$XDG_CONFIG_HOME/git" main
 git subtree pull --prefix=configs/obsidian -m "Updated obsidian config subtree" "$HOME/documents/obsidian-vault/.obsidian" main
