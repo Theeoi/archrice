@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # user configs are each their own subtree.
 git subtree pull --prefix=configs/alacritty -m "Updated alacritty config subtree" "$XDG_CONFIG_HOME/alacritty" main
@@ -16,19 +16,19 @@ git subtree pull --prefix=configs/obsidian -m "Updated obsidian config subtree" 
 
 git subtree pull --prefix=scripts/user-bin -m "Updated user bin subtree" "$HOME/.local/bin" main
 
-rsync -a --delete $HOME/images/wallpapers .
+rsync -a --delete "$HOME/images/wallpapers" .
 
 # store explicitly installed packages
 pacman -Qe >installed.txt
 
 # root-owned configs are not subtrees since using sudo git is not the best idea
-rsync -a --delete $XDG_CONFIG_DIRS/fuzzel/fuzzel.ini ./configs/fuzzel
+rsync -a --delete "$XDG_CONFIG_DIRS/fuzzel/fuzzel.ini" ./configs/fuzzel
 rsync -a --delete /etc/greetd/config.toml ./configs/greetd
 rsync -a --delete /etc/niri/config.kdl ./configs/niri
 rsync -a --delete /etc/vimrc ./configs/vim
-rsync -a --delete $XDG_CONFIG_DIRS/waybar/style.css ./configs/waybar
-rsync -a --delete $XDG_CONFIG_DIRS/waybar/config.jsonc ./configs/waybar
-rsync -a --delete $XDG_CONFIG_DIRS/user-dirs.defaults ./configs/xdg-user-dirs
+rsync -a --delete "$XDG_CONFIG_DIRS/waybar/style.css" ./configs/waybar
+rsync -a --delete "$XDG_CONFIG_DIRS/waybar/config.jsonc" ./configs/waybar
+rsync -a --delete "$XDG_CONFIG_DIRS/user-dirs.defaults" ./configs/xdg-user-dirs
 rsync -a --delete /etc/fonts/local.conf ./configs/fontconfig
 
 rsync -a --delete /usr/local/bin/* ./scripts/bin
