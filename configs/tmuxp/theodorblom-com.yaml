@@ -2,14 +2,20 @@
 session_name: webdev
 start_directory: /home/theo/documents/theodorblom.com
 workspace_builder_options:
-  pane_readiness: always
+    pane_readiness: always
 windows:
-  - window_name: server
-    panes:
-      - shell_command: uv run flask run --debug
-        sleep_before: 1
-  - window_name: editor
-    panes:
-      - shell_command: nvim
-  - window_name: terminal
-    focus: true
+    - window_name: server
+      panes:
+          - shell_command: >
+                uv run --locked --extra dev
+                flask --app 'app:create_app(mode="development")'
+                run --debug
+            sleep_before: 1
+    - window_name: ai
+      panes:
+          - shell_command: opencode
+    - window_name: editor
+      panes:
+          - shell_command: nvim
+    - window_name: terminal
+      focus: true
