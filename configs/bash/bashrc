@@ -83,8 +83,15 @@ unset agent_env
 unset -f ssh_agent_is_available
 
 # Startup default tmux session every time
-if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
-    exec tmux new-session -A -s "${USER}" >/dev/null 2>&1
+if command -v tmux >/dev/null 2>&1 &&
+    [ -n "${DISPLAY}" ] &&
+    [ -z "${TMUX}" ]; then
+
+    if ! tmux has-session -t "$USER" 2>/dev/null; then
+        systemd-run --user --scope --quiet -- tmux new-session -d -s "$USER"
+    fi
+
+    exec tmux attach-session -t "$USER"
 fi
 
 export AUDIT_NUM=$(cat ~/.cache/auditnum.txt)
