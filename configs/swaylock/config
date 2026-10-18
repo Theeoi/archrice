@@ -3,7 +3,7 @@ show-failed-attempts
 indicator-idle-visible
 indicator-caps-lock
 
-image=~/images/wallpapers/a_mountain_with_trees_and_moon.jpg
+image=~/.local/state/wallpaper/current
 indicator-radius=60
 indicator-thickness=5
 inside-color=00000066
