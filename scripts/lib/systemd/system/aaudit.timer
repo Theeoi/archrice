@@ -1,0 +1,10 @@
+[Unit]
+Description=Run aaudit.service daily
+
+[Timer]
+OnCalendar=daily
+RandomizedDelaySec=600
+Persistent=true
+
+[Install]
+WantedBy=timers.target
