@@ -47,7 +47,8 @@
         {
             "type": "lm",
             "key": "├󰟵",
-            "keyColor": "#ffb86c"
+            "keyColor": "#ffb86c",
+            "format": "{service} {version}"
         },
         {
             "type": "terminal",
@@ -58,7 +59,8 @@
         {
             "type": "host",
             "key": "󰌢 PC",
-            "keyColor": "#ff79c6"
+            "keyColor": "#ff79c6",
+            "format": "{vendor} 13 Pro ({sku})"
         },
         {
             "type": "cpu",
@@ -69,7 +71,7 @@
             "type": "gpu",
             "key": "├󰍛",
             "keyColor": "#ff79c6",
-            "format": "{vendor} {name} @ {frequency}"
+            "format": "{name}"
         },
         {
             "type": "disk",
