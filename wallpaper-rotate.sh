@@ -2,7 +2,7 @@
 set -euo pipefail
 
 WALLPAPER_DIR="$HOME/images/wallpapers"
-CURRENT_WALLPAPER="$HOME/.local/state/wallpaper/current"
+CURRENT_WALLPAPER="$XDG_STATE_HOME/wallpaper/current"
 
 # Store the current wallpaper and it's fine if it does not exist.
 current="$(realpath "$CURRENT_WALLPAPER" 2>/dev/null || true)"
@@ -19,5 +19,6 @@ next_wallpaper="$(
 # If a new wallpaper was found, set it up.
 [[ -n "$next_wallpaper" ]] || exit 0
 
+mkdir -p "$(dirname "$CURRENT_WALLPAPER")"
 ln -snf "$next_wallpaper" "$CURRENT_WALLPAPER"
 systemctl --user restart swaybg.service
