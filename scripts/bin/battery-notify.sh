@@ -50,22 +50,22 @@ check_battery() {
     # Define the notification levels and message
     local message="${time_to_empty:+Estimated time remaining: $time_to_empty}"
 
-    if ((percentage <= 20)); then
-        if [[ "$last" != "20" ]]; then
+    if ((percentage <= 10)); then
+        if [[ "$last" != "10" ]]; then
             if notify-send \
                 --urgency=critical \
                 "Battery is critically low (${percentage}%)" \
                 "$message"; then
-                printf '%s\n' 20 >"$STATE_FILE"
+                printf '%s\n' 10 >"$STATE_FILE"
             fi
         fi
-    elif ((percentage <= 35)); then
+    elif ((percentage <= 25)); then
         if [[ -z "$last" ]]; then
             if notify-send \
                 --urgency=normal \
                 "Battery is low (${percentage}%)" \
                 "$message"; then
-                printf '%s\n' 35 >"$STATE_FILE"
+                printf '%s\n' 25 >"$STATE_FILE"
             fi
         fi
     fi
