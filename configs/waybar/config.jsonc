@@ -1,0 +1,71 @@
+// -*- mode: jsonc -*-
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    // "height": 20, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    // "spacing": 4, // Gaps between modules (4px)
+    "reload_style_on_change": true,
+    // Choose the order of the modules
+    "modules-left": [
+        "clock"
+    ],
+    "modules-center": [
+    ],
+    "modules-right": [
+        "bluetooth",
+        "pulseaudio",
+        "network",
+        "custom/vpn",
+        "battery"
+    ],
+    // Modules configuration
+    "clock": {
+        "format": "{:%H:%M - %a, %d %b}"
+    },
+    "battery": {
+        "format": "{icon}",
+        "format-full": "{icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "",
+        "format-alt": "{icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "bluetooth": {
+        "format": "",
+        "format-off": "",
+        "format-disabled": "",
+        "format-connected": " {device_alias}"
+    },
+    "network": {
+        "format-wifi": "{icon}",
+        "format-ethernet": "",
+        "format-disconnected": "󰤮",
+        "format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"],
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "{ipaddr}/{cidr}"
+    },
+   "custom/vpn": {
+      "format": "{}",
+      "return-type": "json",
+      "interval": 5,
+      "exec": "/usr/local/bin/vpn-status.sh"
+  },
+    "pulseaudio": {
+        "format": "{icon}  {format_source}",
+        "format-muted": "  {format_source}",
+        "format-source": "󰍬",
+        "format-source-muted": "󰍭",
+        "format-bluetooth": "{icon}  {format_source}",
+        "format-bluetooth-muted": "  {format_source}",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", "", ""]
+        }
+    }
+}
