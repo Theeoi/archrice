@@ -70,5 +70,6 @@ if command -v tmux >/dev/null 2>&1 &&
     exec tmux attach-session -t "$USER"
 fi
 
-export AUDIT_NUM=$(cat ~/.cache/auditnum.txt)
+AUDIT_NUM=$(cat /var/cache/auditnum.txt)
+export AUDIT_NUM
 fastfetch
