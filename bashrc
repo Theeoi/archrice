@@ -15,6 +15,7 @@ export TEXMFHOME="$XDG_DATA_HOME/texmf"
 export TEXMFVAR="$XDG_CACHE_HOME/texlive/texmf-var"
 export TEXMFCONFIG="$XDG_CONFIG_HOME/texlive/texmf-config"
 export CODEX_HOME="$XDG_CONFIG_HOME/codex"
+export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -56,31 +57,6 @@ case ";${PROMPT_COMMAND-};" in
     PROMPT_COMMAND="bash_history_sync${PROMPT_COMMAND:+; $PROMPT_COMMAND}"
     ;;
 esac
-
-# Ensure only one ssh-agent is running
-agent_env="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}/ssh-agent.env"
-
-ssh_agent_is_available() {
-    [[ -S "${SSH_AUTH_SOCK:-}" ]] || return 1
-
-    ssh-add -l >/dev/null 2>&1
-    local status=$?
-
-    ((status == 0 || status == 1))
-}
-
-if [[ -r "$agent_env" ]]; then
-    source "$agent_env" >/dev/null
-fi
-
-if ! ssh_agent_is_available; then
-    rm -f -- "$agent_env"
-    ssh-agent -t 1h >"$agent_env"
-    source "$agent_env" >/dev/null
-fi
-
-unset agent_env
-unset -f ssh_agent_is_available
 
 # Startup default tmux session every time
 if command -v tmux >/dev/null 2>&1 &&
