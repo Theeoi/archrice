@@ -2,13 +2,15 @@
 
 Collection of configuration files on my Lenovo ThinkPad X1 Yoga (Gen 3) running [Arch Linux](https://archlinux.org/) btw..
 
-*Documentation on the main branch might not be up-to-date. Checkout a tagged commit to ensure documentation align with configs.*
+_Documentation on the main branch might not be up-to-date. Checkout a tagged commit to ensure documentation align with configs._
 
 ## Screenshots
+
 ![clean desktop](/../_screenshots/v1.1.0/desktop.png)
 ![busy desktop](/../_screenshots/v1.1.0/desktop2.png)
 
 ## Tools in this Rice
+
 - [alacritty](configs/alacritty)
     - everybody needs a terminal emulator.
 - [bash](configs/bash)
@@ -32,4 +34,23 @@ Collection of configuration files on my Lenovo ThinkPad X1 Yoga (Gen 3) running 
 - [waybar](configs/waybar)
     - get important information at a glance.
 
-*See the full list of explicitly installed packages in [installed.txt](installed.txt)*
+_See the full list of explicitly installed packages in [installed.txt](installed.txt)_
+
+## Restoring configurations
+
+Configurations are managed using Git subtrees. To restore a configuration with its Git history intact:
+
+```bash
+# Extract the configuration's history
+git subtree split --prefix=configs/alacritty -b alacritty-split
+
+# Clone it into the system configuration directory
+git clone -b alacritty-split . "$XDG_CONFIG_HOME/alacritty"
+
+# Remove the temporary branch
+git branch -D alacritty-split
+```
+
+Replace `alacritty` with the desired configuration. For configurations outside `$XDG_CONFIG_HOME`, adjust the destination path accordingly.
+
+Changes can then be synchronized back to `archrice` using `fetch.sh`.
