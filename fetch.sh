@@ -30,6 +30,8 @@ pacman -Qe >installed.txt
 rsync -a --delete /etc/bash.bashrc ./configs/bash
 rsync -a --delete /etc/bash.bashrc.d ./configs/bash
 rsync -a --delete /etc/ly/config.ini ./configs/ly
+rsync -a --delete /etc/vconsole-dracula ./configs/ly
+rsync -a --delete /etc/systemd/system/ly@.service.d ./configs/ly
 rsync -a --delete /etc/vimrc ./configs/vim
 rsync -a --delete "$XDG_CONFIG_DIRS/user-dirs.defaults" ./configs/xdg-user-dirs
 
