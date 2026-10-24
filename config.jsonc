@@ -52,18 +52,16 @@
       "exec": "/usr/local/bin/vpn-status.sh"
   },
     "pulseaudio": {
-        "format": "{icon}  {format_source}",
-        "format-muted": "  {format_source}",
-        "format-source": "󰍬",
-        "format-source-muted": "󰍭",
-        "format-bluetooth": "{icon}  {format_source}",
-        "format-bluetooth-muted": "  {format_source}",
+        "format": "{icon}",
+        "format-muted": "",
+        // "format-source": "󰍬",
+        // "format-source-muted": "󰍭",
+        "format-bluetooth": "{icon}",
+        "format-bluetooth-muted": "",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
             "headset": "",
             "phone": "",
-            "portable": "",
             "car": "",
             "default": ["", "", "", ""]
         }
