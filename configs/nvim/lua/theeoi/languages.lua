@@ -82,11 +82,21 @@ return {
 			prepend_args = { "--max-line-length", "80" },
 		},
 		prettier = {
-			prepend_args = {
-				"--tab-width=4",
-				"--use-tabs=false",
-				"--print-width=80",
-			},
+			prepend_args = function(_, ctx)
+				local args = {
+					"--tab-width=4",
+					"--use-tabs=false",
+					"--print-width=80",
+				}
+
+				local ft = vim.bo[ctx.buf].filetype
+
+				if ft == "json" or ft == "jsonc" then
+					table.insert(args, "--trailing-comma=none")
+				end
+
+				return args
+			end,
 		},
 	},
 
