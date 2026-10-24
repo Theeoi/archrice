@@ -14,7 +14,6 @@ git subtree pull --prefix=configs/tmuxp -m "Updated tmuxp config subtree" "$XDG_
 git subtree pull --prefix=configs/systemd -m "Updated systemd config subtree" "$XDG_DATA_HOME/systemd/user" main
 git subtree pull --prefix=configs/git -m "Updated git config subtree" "$XDG_CONFIG_HOME/git" main
 git subtree pull --prefix=configs/obsidian -m "Updated obsidian config subtree" "$HOME/documents/obsidian-vault/.obsidian" main
-git subtree pull --prefix=configs/git -m "Updated git config subtree" "$XDG_CONFIG_HOME/git" main
 git subtree pull --prefix=configs/fuzzel -m "Updated fuzzel config subtree" "$XDG_CONFIG_HOME/fuzzel" main
 git subtree pull --prefix=configs/niri -m "Updated niri config subtree" "$XDG_CONFIG_HOME/niri" main
 git subtree pull --prefix=configs/waybar -m "Updated waybar config subtree" "$XDG_CONFIG_HOME/waybar" main
