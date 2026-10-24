@@ -27,6 +27,8 @@ rsync -a --delete "$HOME/images/wallpapers" .
 pacman -Qe >installed.txt
 
 # root-owned configs are not subtrees since using sudo git is not the best idea
+rsync -a --delete /etc/bash.bashrc ./configs/bash
+rsync -a --delete /etc/bash.bashrc.d ./configs/bash
 rsync -a --delete /etc/ly/config.ini ./configs/ly
 rsync -a --delete /etc/vimrc ./configs/vim
 rsync -a --delete "$XDG_CONFIG_DIRS/user-dirs.defaults" ./configs/xdg-user-dirs
