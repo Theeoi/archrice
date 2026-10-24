@@ -7,11 +7,8 @@
     // "spacing": 4, // Gaps between modules (4px)
     "reload_style_on_change": true,
     // Choose the order of the modules
-    "modules-left": [
-        "clock"
-    ],
-    "modules-center": [
-    ],
+    "modules-left": ["clock"],
+    "modules-center": [],
     "modules-right": [
         "bluetooth",
         "pulseaudio",
@@ -45,25 +42,23 @@
         "tooltip-format-wifi": "{essid} ({signalStrength}%)",
         "tooltip-format-ethernet": "{ipaddr}/{cidr}"
     },
-   "custom/vpn": {
-      "format": "{}",
-      "return-type": "json",
-      "interval": 5,
-      "exec": "/usr/local/bin/vpn-status.sh"
-  },
+    "custom/vpn": {
+        "format": "{}",
+        "return-type": "json",
+        "interval": 5,
+        "exec": "/usr/local/bin/vpn-status.sh"
+    },
     "pulseaudio": {
-        "format": "{icon}  {format_source}",
-        "format-muted": "  {format_source}",
-        "format-source": "󰍬",
-        "format-source-muted": "󰍭",
-        "format-bluetooth": "{icon}  {format_source}",
-        "format-bluetooth-muted": "  {format_source}",
+        "format": "{icon}",
+        "format-muted": "",
+        // "format-source": "󰍬",
+        // "format-source-muted": "󰍭",
+        "format-bluetooth": "{icon}",
+        "format-bluetooth-muted": "",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
             "headset": "",
             "phone": "",
-            "portable": "",
             "car": "",
             "default": ["", "", "", ""]
         }
